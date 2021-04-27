@@ -41,7 +41,8 @@ namespace NetworkMonitoring
             //grid1.Children.Add(myButton);
 
             var sp = new StackPanel();
-            sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30, Name = "dynamic_stackpanel", Tag = "sp" });
+            sp.Name = "dynamic_stackpanel";
+            sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30});
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 1", Name = "Command1" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 3", Name = "Command3" });
