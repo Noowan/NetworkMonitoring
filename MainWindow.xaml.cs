@@ -51,11 +51,30 @@ namespace NetworkMonitoring
 
         private void mybutton_click2(object sender, RoutedEventArgs e)
         {
-
             GUI_Logic gl = new GUI_Logic();
-            gl.DeleteStackpanel(GUI_Logic.str_elem_name);
+            if (e.Source.ToString().Contains("Опция 1"))
+            {
+                gl.DeleteStackpanel(GUI_Logic.str_elem_name);
+            }
 
-  
+            if (e.Source.ToString().Contains("Опция 2"))
+            {
+                gl.DeleteStackpanel(GUI_Logic.str_elem_name);
+            }
+
+            if (e.Source.ToString().Contains("Опция 3"))
+            {
+                gl.DeleteStackpanel(GUI_Logic.str_elem_name);
+            }
+
+            if (e.Source.ToString().Contains("Опция 4"))
+            {
+                gl.DeleteStackpanel(GUI_Logic.str_elem_name);
+            }
+
+
+
+
         }
 
 
