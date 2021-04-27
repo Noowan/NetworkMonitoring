@@ -53,6 +53,8 @@ namespace NetworkMonitoring
             sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(mybutton_click2));
             grid1.Children.Add(sp);
 
+
+
         }
 
         private void mybutton_click2(object sender, RoutedEventArgs e)
