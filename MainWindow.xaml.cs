@@ -25,8 +25,6 @@ namespace NetworkMonitoring
             InitializeComponent();
         }
 
-
-
         public void Window_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -42,7 +40,6 @@ namespace NetworkMonitoring
             //myButton.RenderTransform = transform;
             //grid1.Children.Add(myButton);
 
-
             var sp = new StackPanel();
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30, Name = "dynamic_stackpanel", Tag = "sp" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 1", Name = "Command1" });
@@ -55,7 +52,6 @@ namespace NetworkMonitoring
             sp.RenderTransform = transform1;
             sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(mybutton_click2));
             grid1.Children.Add(sp);
-
 
         }
 
