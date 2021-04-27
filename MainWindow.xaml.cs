@@ -18,31 +18,25 @@ namespace NetworkMonitoring
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+         public MainWindow()
         {
             InitializeComponent();
         }
 
         public void Window_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-
-            //var myButton = new Button();
-            //myButton.Width = 100;
-            //myButton.Height = 30;
-            //myButton.Content = "Кнопка";
-            //myButton.Click += mybutton_click;
-            //myButton.Name = "dynamic_button";
-            //TranslateTransform transform = new TranslateTransform();
-            //transform.X = Mouse.GetPosition(grid1).X - 350;
-            //transform.Y = Mouse.GetPosition(grid1).Y - 180;
-            //myButton.RenderTransform = transform;
-            //grid1.Children.Add(myButton);
-
+            
+           //Создаем StackPanel с кнопками и помещаем рядом с курсором
             var sp = new StackPanel();
             sp.Name = "dynamic_stackpanel";
-            sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30});
+            GUI_Logic.str_elem_name = sp.Name;
+            sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 1", Name = "Command1" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 3", Name = "Command3" });
@@ -57,28 +51,25 @@ namespace NetworkMonitoring
 
         private void mybutton_click2(object sender, RoutedEventArgs e)
         {
-            if (e.Source.ToString().Contains("Опция 1"))
-            {
-                UIElement sp = null;
-                foreach (StackPanel c in grid1.Children)
-                    if (c.Name == "dynamic_stackpanel")
-                        sp = (UIElement)c;
-                grid1.Children.Remove(sp);
 
-                //MessageBox.Show("ok1");
-            }
+            GUI_Logic gl = new GUI_Logic();
+            gl.DeleteStackpanel(GUI_Logic.str_elem_name);
 
-
+  
         }
 
-        private void mybutton_click(object sender, RoutedEventArgs e)
-        {
-            UIElement btn = null;
-            foreach (Control c in grid1.Children)
-                if (c.Name == "dynamic_button")
-                    btn = (UIElement)c;
-            grid1.Children.Remove(btn);
-        }
 
     }
+
+    //private void mybutton_click(object sender, RoutedEventArgs e)
+    //{
+    //    UIElement btn = null;
+    //    foreach (Control c in grid1.Children)
+    //        if (c.Name == "dynamic_button")
+    //            btn = (UIElement)c;
+    //    grid1.Children.Remove(btn);
+    //}
+
+
+
 }

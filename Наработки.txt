@@ -1,0 +1,28 @@
+﻿ 
+ 
+ ----Прибить динамический контрол----
+ var myButton = new Button();
+ myButton.Width = 100;
+ myButton.Height = 30;
+ myButton.Content = "Кнопка";
+ myButton.Click += mybutton_click;
+ myButton.Name = "dynamic_button";
+ TranslateTransform transform = new TranslateTransform();
+ transform.X = Mouse.GetPosition(grid1).X - 350;
+ transform.Y = Mouse.GetPosition(grid1).Y - 180;
+ myButton.RenderTransform = transform;
+ grid1.Children.Add(myButton);
+
+
+
+ ----Прибить стакпанель(динамическую)
+if (e.Source.ToString().Contains("Опция 1"))
+{
+    UIElement sp = null;
+    foreach (StackPanel c in grid1.Children)
+        if (c.Name == "dynamic_stackpanel")
+            sp = (UIElement)c;
+   grid1.Children.Remove(sp);
+
+   ----Проверка какая кнопка сработала----
+   if (e.Source.ToString().Contains("Опция 1"))

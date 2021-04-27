@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:NetworkMonitoring"
         mc:Ignorable="d"
         x:Name="main_window"
+        x:FieldModifier="public"
         Title="MainWindow" Height="414" Width="831" PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
     <Grid x:Name="grid1" Height="398" VerticalAlignment="Top" HorizontalAlignment="Center" Width="831" >
 
