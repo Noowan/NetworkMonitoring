@@ -16,6 +16,7 @@ namespace NetworkMonitoring
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
 
         public static string str_elem_name;
+
         public void DeleteStackPanel(string name)
         {
 
