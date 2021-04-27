@@ -45,11 +45,11 @@ namespace NetworkMonitoring
             transform1.X = Mouse.GetPosition(grid1).X - 350;
             transform1.Y = Mouse.GetPosition(grid1).Y - 100;
             sp.RenderTransform = transform1;
-            sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(mybutton_click2));
+            sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(StackPanel_ButtonClick));
             grid1.Children.Add(sp);
         }
 
-        private void mybutton_click2(object sender, RoutedEventArgs e)
+        private void StackPanel_ButtonClick(object sender, RoutedEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
             if (e.Source.ToString().Contains("Опция 1"))
