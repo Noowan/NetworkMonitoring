@@ -48,10 +48,10 @@ namespace NetworkMonitoring
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 3", Name = "Command3" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 4", Name = "Command4" });
-            TranslateTransform transform1 = new TranslateTransform();
-            transform1.X = Mouse.GetPosition(grid1).X - 350;
-            transform1.Y = Mouse.GetPosition(grid1).Y - 100;
-            sp.RenderTransform = transform1;
+            TranslateTransform transform = new TranslateTransform();
+            transform.X = Mouse.GetPosition(grid1).X - 350;
+            transform.Y = Mouse.GetPosition(grid1).Y - 100;
+            sp.RenderTransform = transform;
             sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(mybutton_click2));
             grid1.Children.Add(sp);
 
