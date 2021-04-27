@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Bitmap1.bmp">
+    <None Remove="Bitmap1.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Bitmap1.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -7,26 +7,26 @@
         mc:Ignorable="d"
         x:Name="main_window"
         x:FieldModifier="public"
-        Title="MainWindow" Height="414" Width="831" PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
+        Title="MainWindow" Height="414" Width="831" >
     <Grid x:Name="grid1" Height="398" VerticalAlignment="Top" HorizontalAlignment="Center" Width="831">
-        <Button Name ="R1"  HorizontalAlignment="Left" Margin="150,100,0,0" VerticalAlignment="Top" Height="68" Width="84">
+        <Button Name ="R1"  HorizontalAlignment="Left" Margin="150,100,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
             <Button.Background>
-                <ImageBrush ImageSource="/Bitmap1.bmp" />
+                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
             </Button.Background>
         </Button>
-        <Button Name ="R2"  HorizontalAlignment="Left" Margin="150,250,0,0" VerticalAlignment="Top" Height="68" Width="84">
+        <Button Name ="R2"  HorizontalAlignment="Left" Margin="150,250,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
             <Button.Background>
-                <ImageBrush ImageSource="/Bitmap1.bmp" />
+                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
             </Button.Background>
         </Button>
-        <Button Name ="R3"  HorizontalAlignment="Left" Margin="550,100,0,0" VerticalAlignment="Top" Height="68" Width="84">
+        <Button Name ="R3"  HorizontalAlignment="Left" Margin="550,100,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
             <Button.Background>
-                <ImageBrush ImageSource="/Bitmap1.bmp" />
+                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
             </Button.Background>
         </Button>
-        <Button Name ="R4" HorizontalAlignment="Left" Margin="550,250,0,0" VerticalAlignment="Top" Height="68" Width="84">
+        <Button Name ="R4" HorizontalAlignment="Left" Margin="550,250,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
             <Button.Background>
-                <ImageBrush ImageSource="/Bitmap1.bmp" />
+                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
             </Button.Background>
         </Button>
 
