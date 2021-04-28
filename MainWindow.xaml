@@ -12,7 +12,7 @@
         <Grid x:Name="grid1" Height="398" VerticalAlignment="Top" HorizontalAlignment="Center" Width="831">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="30">
+                <RowDefinition Height="20">
                 </RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -21,6 +21,12 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <Menu Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                <MenuItem Header="File"></MenuItem>
+                <MenuItem Header="Edit"></MenuItem>
+                <MenuItem Header="View"></MenuItem>
+            </Menu>
 
             <Button Grid.Column="0" Grid.Row="1" Name ="R1"  VerticalAlignment="Top" Margin="50" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick" BorderThickness="0">
                 <Button.Background>
