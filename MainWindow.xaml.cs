@@ -65,14 +65,6 @@ namespace NetworkMonitoring
 
     }
 
-    //private void mybutton_click(object sender, RoutedEventArgs e)
-    //{
-    //    UIElement btn = null;
-    //    foreach (Control c in grid1.Children)
-    //        if (c.Name == "dynamic_button")
-    //            btn = (UIElement)c;
-    //    grid1.Children.Remove(btn);
-    //}
 
 
 
