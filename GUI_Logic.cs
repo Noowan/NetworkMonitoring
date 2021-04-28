@@ -15,20 +15,16 @@ namespace NetworkMonitoring
         //Даем возможность обращаться к контролам
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
 
-        public static string str_elem_name;
-
         public void DeleteStackPanel(string name)
         {
             UIElement foundStackPanel = Form.grid1.Children.OfType<StackPanel>().Where(x => x.Name.ToString() == name).FirstOrDefault();
             Form.grid1.Children.Remove(foundStackPanel);
-        
         }
 
-        public void CreateStackPanel()
+        public void CreateStackPanel(string name)
         {
             var sp = new StackPanel();
-            sp.Name = "dynamic_stackpanel";
-            GUI_Logic.str_elem_name = sp.Name;
+            sp.Name = name;
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 1", Name = "Command1" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });

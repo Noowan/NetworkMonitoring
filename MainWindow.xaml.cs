@@ -24,16 +24,18 @@ namespace NetworkMonitoring
     public partial class MainWindow : Window
     {
 
+        string name = "dynamic_stackpanel";
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public void Window_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        public void RouterClick(object sender, MouseButtonEventArgs e)
         {
             //Создаем StackPanel с кнопками и помещаем рядом с курсором
             GUI_Logic gl = new GUI_Logic();
-            gl.CreateStackPanel();
+            gl.CreateStackPanel(name);
         }
 
         public void StackPanel_ButtonClick(object sender, RoutedEventArgs e)
@@ -41,27 +43,23 @@ namespace NetworkMonitoring
             GUI_Logic gl = new GUI_Logic();
             if (e.Source.ToString().Contains("Опция 1"))
             {
-                gl.DeleteStackPanel(GUI_Logic.str_elem_name);
+                gl.DeleteStackPanel(name);
             }
 
             if (e.Source.ToString().Contains("Опция 2"))
             {
-                gl.DeleteStackPanel(GUI_Logic.str_elem_name);
+                gl.DeleteStackPanel(name);
             }
 
             if (e.Source.ToString().Contains("Опция 3"))
             {
-                gl.DeleteStackPanel(GUI_Logic.str_elem_name);
+                gl.DeleteStackPanel(name);
             }
 
             if (e.Source.ToString().Contains("Опция 4"))
             {
-                gl.DeleteStackPanel(GUI_Logic.str_elem_name);
+                gl.DeleteStackPanel(name);
             }
-
-
-
-
         }
 
 
