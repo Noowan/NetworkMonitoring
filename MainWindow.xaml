@@ -8,27 +8,52 @@
         x:Name="main_window"
         x:FieldModifier="public"
         Title="MainWindow" Height="414" Width="831" >
-    <Grid x:Name="grid1" Height="398" VerticalAlignment="Top" HorizontalAlignment="Center" Width="831">
-        <Button Name ="R1"  HorizontalAlignment="Left" Margin="150,100,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick">
-            <Button.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
-            </Button.Background>
-        </Button>
-        <Button Name ="R2"  HorizontalAlignment="Left" Margin="150,250,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick">
-            <Button.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
-            </Button.Background>
-        </Button>
-        <Button Name ="R3"  HorizontalAlignment="Left" Margin="550,100,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick">
-            <Button.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
-            </Button.Background>
-        </Button>
-        <Button Name ="R4" HorizontalAlignment="Left" Margin="550,250,0,0" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick">
-            <Button.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
-            </Button.Background>
-        </Button>
+    <Grid x:Name="grid2" Height="398" VerticalAlignment="Top" HorizontalAlignment="Center" Width="831">
+        <Grid x:Name="grid1" Height="398" VerticalAlignment="Top" HorizontalAlignment="Center" Width="831">
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30">
+                </RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="1" Name ="R1"  VerticalAlignment="Top" Margin="50" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
+                </Button.Background>
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="PE-1"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
+            <Label Grid.Column="0" Grid.Row="1" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+
+            <Button Grid.Column="0" Grid.Row="2" Name ="R2"  Margin="50" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
+                </Button.Background>
+            </Button>
+            <Label Grid.Column="0" Grid.Row="2" Content="PE-3"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
+            <Label Grid.Column="0" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+
+            <Button Grid.Column="1" Grid.Row="1" Name ="R3" Margin="50" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
+                </Button.Background>
+            </Button>
+            <Label Grid.Column="1" Grid.Row="1" Content="PE-2"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
+            <Label Grid.Column="1" Grid.Row="1" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+
+            <Button Grid.Column="1" Grid.Row="2" Name ="R4" Margin="50" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseRightButtonDown="RouterClick" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Bitmap1.bmp" />
+                </Button.Background>
+            </Button>
+            <Label Grid.Column="1" Grid.Row="2" Content="PE-2"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
+            <Label Grid.Column="1" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+
+        </Grid>
     </Grid>
 </Window>

@@ -25,6 +25,7 @@ namespace NetworkMonitoring
         {
             var sp = new StackPanel();
             sp.Name = name;
+            
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 1", Name = "Command1" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });
@@ -35,7 +36,7 @@ namespace NetworkMonitoring
             transform1.Y = Mouse.GetPosition(Form.grid1).Y - 100;
             sp.RenderTransform = transform1;
             sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(Form.StackPanel_ButtonClick));
-            Form.grid1.Children.Add(sp);
+            Form.grid2.Children.Add(sp);
         }
     }
 }
