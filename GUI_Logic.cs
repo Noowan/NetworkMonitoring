@@ -19,12 +19,9 @@ namespace NetworkMonitoring
 
         public void DeleteStackPanel(string name)
         {
-
-            UIElement elem_name = null;
-            foreach (StackPanel c in Form.grid1.Children)
-                if (c.Name == name)
-                    elem_name = (UIElement)c;
-            Form.grid1.Children.Remove(elem_name);
+            UIElement foundStackPanel = Form.grid1.Children.OfType<StackPanel>().Where(x => x.Name.ToString() == name).FirstOrDefault();
+            Form.grid1.Children.Remove(foundStackPanel);
+        
         }
 
         public void CreateStackPanel()
