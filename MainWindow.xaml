@@ -22,10 +22,16 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Menu Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
-                <MenuItem Header="File"></MenuItem>
-                <MenuItem Header="Edit"></MenuItem>
-                <MenuItem Header="View"></MenuItem>
+            <Menu Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
+                <MenuItem Header="File" Margin="2"></MenuItem>
+                <MenuItem Header="Edit" Margin="2"></MenuItem>
+                <MenuItem Header="View" Margin="2"></MenuItem>
+               
+            </Menu>
+            <Menu Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">
+                <RadioButton Content="Запись в БД" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" IsManipulationEnabled="False" Margin="100,2,2,2" IsHitTestVisible="False"/>
+                <RadioButton Content="Опрос SSH" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False"/>
+                <RadioButton Content="Опрос SNMP" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False"/>
             </Menu>
 
             <Button Grid.Column="0" Grid.Row="1" Name ="R1"  VerticalAlignment="Top" Margin="50" Height="68" Width="84" PreviewMouseLeftButtonDown="RouterClick" BorderThickness="0">
