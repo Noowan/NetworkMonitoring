@@ -38,5 +38,10 @@ namespace NetworkMonitoring
             sp.AddHandler(Button.ClickEvent, new RoutedEventHandler(Form.StackPanel_ButtonClick));
             Form.grid2.Children.Add(sp);
         }
+
+        public void ShowAbout()
+        {
+            
+        }
     }
 }

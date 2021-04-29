@@ -40,6 +40,7 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+
     </Window.Resources>
 
 
@@ -59,9 +60,10 @@
             </Grid.ColumnDefinitions>
 
             <Menu Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
-                <MenuItem Header="File" Margin="2"></MenuItem>
+                <MenuItem Header="File" Margin="2" ></MenuItem>
                 <MenuItem Header="Edit" Margin="2"></MenuItem>
                 <MenuItem Header="View" Margin="2"></MenuItem>
+                <MenuItem Header="О программе" Margin="2" PreviewMouseLeftButtonDown="AboutClick"></MenuItem>
 
             </Menu>
             <Menu Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">

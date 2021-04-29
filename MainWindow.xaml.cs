@@ -62,7 +62,11 @@ namespace NetworkMonitoring
             }
         }
 
-
+        private void AboutClick(object sender, MouseButtonEventArgs e)
+        {
+            GUI_Logic gl = new GUI_Logic();
+            gl.ShowAbout();
+        }
     }
 
 
