@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <None Remove="Bitmap1.bmp" />
+    <None Remove="Bitmap2.bmp" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Bitmap1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Bitmap2.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

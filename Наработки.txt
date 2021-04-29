@@ -25,3 +25,49 @@ if (e.Source.ToString().Contains("Опция 1"))
 
    ----Проверка какая кнопка сработала----
    if (e.Source.ToString().Contains("Опция 1"))
+
+
+   ---Стиль кнопки(фон)-----
+       <Window.Resources>
+        <Style x:Key="Router" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush 
+                        ImageSource="pack://application:,,,/Bitmap1.bmp">
+                    </ImageBrush>
+                </Setter.Value>
+            </Setter>
+            <!--<Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush
+                                ImageSource="pack://application:,,,/Bitmap1.bmp">
+                            </ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>-->
+        </Style>
+
+        ---Поведение кнопки(отключить заливку)----
+            <ControlTemplate x:Key="NoMouseOverButtonTemplate" TargetType="Button">
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                </ContentPresenter>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush
+                                ImageSource="pack://application:,,,/Bitmap1.bmp">
+                            </ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
