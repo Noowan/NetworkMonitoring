@@ -45,5 +45,11 @@ namespace NetworkMonitoring
             aboutWindow.Show();
         }
 
+        public void ShowAboutAuthor()
+        {
+            AuthorInfo aboutAuthorWindow = new AuthorInfo();
+            aboutAuthorWindow.Show();
+        }
+
     }
 }

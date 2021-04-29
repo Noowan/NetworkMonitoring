@@ -1,0 +1,17 @@
+﻿<Window x:Class="NetworkMonitoring.AuthorInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkMonitoring"
+        mc:Ignorable="d"
+        Title="AuthorInfo" Height="263" Width="403">
+    <Grid>
+        <Button Content="Закрыть" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="30" Width="138" PreviewMouseLeftButtonDown="Button_Close"/>
+        <Label Content="Разработано:" HorizontalContentAlignment="Center" Margin="5,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="363"/>
+        <Label Content="Студентом 5 курса группы 606-61з" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,80,0,0" Height="25" Width="363" HorizontalContentAlignment="Center" />
+        <Label Content="Федотовым А.О." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,120,0,0" Height="25" Width="363" HorizontalContentAlignment="Center" />
+    
+
+    </Grid>
+</Window>
