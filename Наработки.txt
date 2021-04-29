@@ -14,7 +14,6 @@
  grid1.Children.Add(myButton);
 
 
-
  ----Прибить стакпанель(динамическую)
 if (e.Source.ToString().Contains("Опция 1"))
 {
