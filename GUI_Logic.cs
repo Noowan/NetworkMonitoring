@@ -41,7 +41,9 @@ namespace NetworkMonitoring
 
         public void ShowAbout()
         {
-            
+            AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.Show();
         }
+
     }
 }
