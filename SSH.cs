@@ -33,18 +33,17 @@ namespace NetworkMonitoring
             this.name = _n;
         }
 
-        public void GetConfigOnTimer(object obj)
+        public void GetConfigOnTimer(object sender, EventArgs e)
         {
             using (var client = new SshClient(host, login, password))
             {
                 client.Connect();
                 MainWindow.isSSHConnected = true;
-                //Form.SSHLamp.Background = new SolidColorBrush(Colors.Gray);
                 var terminal = client.RunCommand(command);
-                //if (terminal.Result != null)
-                //Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
+                Form.SSHLamp.Background = new SolidColorBrush(Colors.Gray);
                 config = terminal.Result.ToString();
                 client.Disconnect();
+                Form.WriteLamp.Background = new SolidColorBrush(Colors.Green);
                 WriteConfig(name);
 
 
@@ -60,7 +59,8 @@ namespace NetworkMonitoring
                 {
                     await sw.WriteAsync(config);
                 }
-                MessageBox.Show("OK");
+                Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
+                Form.WriteLamp.Background = new SolidColorBrush(Colors.Gray);
             }
             catch (Exception e)
             {
