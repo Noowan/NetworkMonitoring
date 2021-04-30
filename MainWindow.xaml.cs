@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,12 +25,15 @@ namespace NetworkMonitoring
     public partial class MainWindow : Window
     {
 
+        public static bool isSSHConnected = false;
+        public static bool isSNMPConnected = false;
+
         string name = "dynamic_stackpanel";
 
         public MainWindow()
         {
             InitializeComponent();
-
+            
         }
 
         public void RouterClick(object sender, MouseButtonEventArgs e)
@@ -75,7 +79,13 @@ namespace NetworkMonitoring
             gl.ShowAboutAuthor();
         }
 
-        
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/PE-1", "PE-1");
+            TimerCallback sshConfigTimerCallback = new(sSHGetConfig.GetConfigOnTimer);
+            Timer timer = new(sshConfigTimerCallback, null, 1000, 30000);
+
+        }
     }
 
 
