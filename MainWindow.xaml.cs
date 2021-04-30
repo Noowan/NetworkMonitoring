@@ -29,6 +29,7 @@ namespace NetworkMonitoring
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         public void RouterClick(object sender, MouseButtonEventArgs e)

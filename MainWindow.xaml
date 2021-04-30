@@ -67,8 +67,8 @@
 
             </Menu>
             <Menu Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">
-                <RadioButton Content="Запись в БД" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" IsManipulationEnabled="False" Margin="100,2,2,2" IsHitTestVisible="False"/>
-                <RadioButton Content="Опрос SSH" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False"/>
+                <RadioButton Name ="WriteLamp" Content="Запись в БД" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" IsManipulationEnabled="False" Margin="100,2,2,2" IsHitTestVisible="False"/>
+                <RadioButton Name ="SSHLamp" Content="Опрос SSH" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False"/>
                 <RadioButton Content="Опрос SNMP" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False"/>
             </Menu>
 
