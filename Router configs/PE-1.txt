@@ -1,0 +1,206 @@
+Building configuration...
+
+Current configuration : 3377 bytes
+!
+! Last configuration change at 15:14:15 UTC Fri Apr 30 2021
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname PRS-3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging discriminator EXCESS severity drops 6 msg-body drops EXCESSCOLL
+logging buffered 50000
+logging console discriminator EXCESS
+!
+no aaa new-model
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+ip vrf LTM
+ rd 64583:5010
+ route-target export 64583:5010
+ route-target import 64583:5010
+!
+!
+!
+no ip domain-lookup
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+policy-map 666
+ class class-default
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.10.250.4 255.255.255.255
+ ip router isis
+!
+interface Tunnel0
+ ip vrf forwarding LTM
+ ip address 192.168.2.9 255.255.255.252
+ shutdown
+ tunnel source 192.168.2.6
+ tunnel destination 192.168.2.1
+ isis metric 63
+!
+interface Tunnel1
+ no ip address
+!
+interface Tunnel10
+ ip address 192.168.3.9 255.255.255.252
+ shutdown
+ tunnel source 192.168.3.6
+ tunnel destination 192.168.3.1
+!
+interface Ethernet0/0
+ no switchport
+ ip address 10.10.1.10 255.255.255.252
+ ip router isis
+ mpls ip
+ bfd interval 50 min_rx 50 multiplier 3
+!
+interface Ethernet0/1
+ no switchport
+ ip address 10.10.1.13 255.255.255.252
+ ip router isis
+ mpls ip
+ bfd interval 50 min_rx 50 multiplier 3
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+interface Ethernet1/0
+!
+interface Ethernet1/1
+!
+interface Ethernet1/2
+!
+interface Ethernet1/3
+!
+interface Ethernet2/0
+!
+interface Ethernet2/1
+!
+interface Ethernet2/2
+ no switchport
+ ip address 192.168.3.6 255.255.255.252
+!
+interface Ethernet2/3
+ no switchport
+ ip address 192.168.2.6 255.255.255.252
+ isis metric 63
+!
+interface Ethernet3/0
+!
+interface Ethernet3/1
+!
+interface Ethernet3/2
+!
+interface Ethernet3/3
+ description LTM
+ switchport access vlan 23
+ switchport mode access
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan23
+ ip vrf forwarding LTM
+ ip address 172.22.2.1 255.255.255.0
+!
+router isis
+ net 49.0001.1001.0025.0040.00
+ is-type level-2-only
+ router-id Loopback0
+ fast-flood
+ log-adjacency-changes
+ bfd all-interfaces
+!
+router bgp 64583
+ bgp log-neighbor-changes
+ redistribute connected route-map 666
+ neighbor AS64583 peer-group
+ neighbor AS64583 remote-as 64583
+ neighbor AS64583 update-source Loopback0
+ neighbor 10.10.250.1 peer-group AS64583
+ !
+ address-family vpnv4
+  neighbor AS64583 send-community both
+  neighbor 10.10.250.1 activate
+ exit-address-family
+ !
+ address-family ipv4 vrf LTM
+  redistribute connected metric 0
+  redistribute static metric 50000 route-map 666
+ exit-address-family
+!
+ip forward-protocol nd
+!
+ip tcp synwait-time 5
+ip http server
+!
+ip route 10.10.250.1 255.255.255.255 Tunnel10
+ip route 192.168.2.0 255.255.255.252 192.168.2.5 251
+ip route 192.168.3.0 255.255.255.252 192.168.3.5 251
+ip route vrf LTM 172.22.1.0 255.255.255.0 Tunnel0 201
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+route-map 666 permit 10
+ set local-preference 80
+ set weight 0
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+!
+end

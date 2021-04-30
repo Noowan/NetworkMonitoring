@@ -1,0 +1,151 @@
+Current configuration : 2189 bytes
+!
+! Last configuration change at 15:14:16 UTC Fri Apr 30 2021
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname PRS-1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging discriminator EXCESS severity drops 6 msg-body drops EXCESSCOLL
+logging buffered 50000
+logging console discriminator EXCESS
+!
+no aaa new-model
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+no ip domain-lookup
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.10.250.3 255.255.255.255
+ ip router isis
+!
+interface Ethernet0/0
+ no switchport
+ ip address 10.10.1.6 255.255.255.252
+ ip router isis
+ mpls ip
+ bfd interval 50 min_rx 50 multiplier 3
+!
+interface Ethernet0/1
+ no switchport
+ ip address 10.10.1.9 255.255.255.252
+ ip router isis
+ mpls ip
+ bfd interval 50 min_rx 50 multiplier 3
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+interface Ethernet1/0
+!
+interface Ethernet1/1
+!
+interface Ethernet1/2
+!
+interface Ethernet1/3
+!
+interface Ethernet2/0
+!
+interface Ethernet2/1
+!
+interface Ethernet2/2
+!
+interface Ethernet2/3
+!
+interface Ethernet3/0
+!
+interface Ethernet3/1
+!
+interface Ethernet3/2
+!
+interface Ethernet3/3
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router isis
+ net 49.0001.1001.0025.0030.00
+ is-type level-2-only
+ router-id Loopback0
+ bfd all-interfaces
+!
+router bgp 64583
+ bgp log-neighbor-changes
+ neighbor AS64583 peer-group
+ neighbor AS64583 remote-as 64583
+ neighbor AS64583 update-source Loopback0
+ neighbor AS64583 next-hop-self
+ neighbor 10.10.250.1 peer-group AS64583
+ !
+ address-family vpnv4
+  neighbor AS64583 send-community both
+  neighbor 10.10.250.1 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+ip tcp synwait-time 5
+ip http server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+!
+end
