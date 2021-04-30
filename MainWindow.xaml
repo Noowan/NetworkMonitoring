@@ -89,6 +89,7 @@
             <Label Grid.Column="1" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
 
         </Grid>
+        
     </Grid>
 
 </Window>
