@@ -81,7 +81,7 @@ namespace NetworkMonitoring
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/PE-1", "PE-1");
+            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/PE-1.txt", "PE-1");
             TimerCallback sshConfigTimerCallback = new(sSHGetConfig.GetConfigOnTimer);
             Timer timer = new(sshConfigTimerCallback, null, 1000, 30000);
 
