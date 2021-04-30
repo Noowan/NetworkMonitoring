@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace NetworkMonitoring
 {
@@ -25,7 +26,7 @@ namespace NetworkMonitoring
         {
             var sp = new StackPanel();
             sp.Name = name;
-            
+
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 1", Name = "Command1" });
             sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });
@@ -49,6 +50,15 @@ namespace NetworkMonitoring
         {
             AuthorInfo aboutAuthorWindow = new AuthorInfo();
             aboutAuthorWindow.Show();
+        }
+
+        public void EnableSSHConfigTimer(string name)
+        {
+            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + name + ".txt", name);
+            DispatcherTimer getConfigTimer = new DispatcherTimer();
+            getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
+            getConfigTimer.Interval = new TimeSpan(0, 0, 10);
+            getConfigTimer.Start();
         }
 
     }
