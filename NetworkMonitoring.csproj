@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="SSH.NET" Version="2020.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Bitmap1.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
