@@ -83,7 +83,8 @@ namespace NetworkMonitoring
         {
             SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/PE-1.txt", "PE-1");
             TimerCallback sshConfigTimerCallback = new(sSHGetConfig.GetConfigOnTimer);
-            Timer timer = new(sshConfigTimerCallback, null, 1000, 30000);
+            Timer timer = new(sshConfigTimerCallback, null, 1000, 2000);
+            SSHLamp.Background = new SolidColorBrush(Colors.Green);
 
         }
     }

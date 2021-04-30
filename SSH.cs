@@ -11,7 +11,7 @@ using SshNet;
 
 namespace NetworkMonitoring
 {
- 
+
     class SSHGetConfig
     {
 
@@ -42,27 +42,25 @@ namespace NetworkMonitoring
                 //Form.SSHLamp.Background = new SolidColorBrush(Colors.Gray);
                 var terminal = client.RunCommand(command);
                 //if (terminal.Result != null)
-                    //Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
+                //Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
                 config = terminal.Result.ToString();
                 client.Disconnect();
                 WriteConfig(name);
-                   
-                
+
+
             }
         }
 
         public async void WriteConfig(string name)
         {
-            string writePath = "/RouterConfigs/" + name + ".txt";
+            string writePath = "Router Configs\\" + name + ".txt";
             try
             {
                 using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
                 {
-                    //Form.SSHLamp.Background = new SolidColorBrush(Colors.Gray);
                     await sw.WriteAsync(config);
-                    //Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
                 }
-                //Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
+                MessageBox.Show("OK");
             }
             catch (Exception e)
             {
