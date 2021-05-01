@@ -32,6 +32,18 @@ namespace NetworkMonitoring
                     Pos1IP.Text = "null";
                     Pos1Login.Text = "null";
                     Pos1Pass.Text = "null";
+                    Pos2Name.Text = "null";
+                    Pos2IP.Text = "null";
+                    Pos2Login.Text = "null";
+                    Pos2Pass.Text = "null";
+                    Pos3Name.Text = "null";
+                    Pos3IP.Text = "null";
+                    Pos3Login.Text = "null";
+                    Pos3Pass.Text = "null";
+                    Pos4Name.Text = "null";
+                    Pos4IP.Text = "null";
+                    Pos4Login.Text = "null";
+                    Pos4Pass.Text = "null";
                 }
             }
 
