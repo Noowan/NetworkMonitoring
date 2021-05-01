@@ -24,7 +24,6 @@ namespace NetworkMonitoring
 
         }
 
-
         public void RouterClick(object sender, MouseButtonEventArgs e)
         {
             //Создаем StackPanel с кнопками и помещаем рядом с курсором

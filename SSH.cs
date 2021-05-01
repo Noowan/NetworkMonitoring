@@ -41,7 +41,6 @@ namespace NetworkMonitoring
                 Form.WriteLamp.Background = new SolidColorBrush(Colors.Green);
                 WriteConfig(name);
 
-
             }
         }
 
