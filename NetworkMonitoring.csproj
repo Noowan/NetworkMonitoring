@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Bitmap1.bmp">
+    <Resource Include="Icons\Bitmap1.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Bitmap2.bmp">
+    <Resource Include="Icons\Bitmap2.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

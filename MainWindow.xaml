@@ -14,7 +14,7 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush 
-                        ImageSource="pack://application:,,,/Bitmap1.bmp">
+                        ImageSource="pack://application:,,,/Icons/Bitmap1.bmp">
                     </ImageBrush>
                 </Setter.Value>
             </Setter>
@@ -33,7 +33,7 @@
                     <Setter Property="Background">
                         <Setter.Value>
                             <ImageBrush
-                                ImageSource="pack://application:,,,/Bitmap2.bmp">
+                                ImageSource="pack://application:,,,/Icons/Bitmap2.bmp">
                             </ImageBrush>
                         </Setter.Value>
                     </Setter>
