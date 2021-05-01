@@ -71,3 +71,7 @@ if (e.Source.ToString().Contains("Опция 1"))
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+
+
+        ---Генерация базы в коде----
+        Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=NetworkMonitoring;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -f

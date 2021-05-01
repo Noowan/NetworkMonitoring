@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetworkMonitoring"
         mc:Ignorable="d"
-        Title="Опции" Height="450" Width="800">
+        Title="Опции" Height="450" Width="800"
+        x:Name="options_window">
     
-    <Grid>
+    <Grid x:Name="grid">
         
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>

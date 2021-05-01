@@ -22,6 +22,19 @@ namespace NetworkMonitoring
         public Options()
         {
             InitializeComponent();
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                // получаем объекты из бд и выводим на консоль
+                var devices = db.Devices.ToList();
+                if (devices.Count == 0) 
+                {
+                    Pos1Name.Text = "null";
+                    Pos1IP.Text = "null";
+                    Pos1Login.Text = "null";
+                    Pos1Pass.Text = "null";
+                }
+            }
+
         }
 
         private void CloseButton_Click(object sender, MouseButtonEventArgs e)
