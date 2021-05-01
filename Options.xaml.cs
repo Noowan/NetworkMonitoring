@@ -64,8 +64,75 @@ namespace NetworkMonitoring
                 {
                     Pos1Name.Text = d.Name;
                     Pos1IP.Text = d.Ip;
+                    Pos1Pass.Text = d.Pass;
+                    Pos1Login.Text = d.Login;
                 }
-                    
+            }
+
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var devices = db.Devices.Join(db.Credentials,
+                    d => d.DeviceId,
+                    c => c.DeviceId,
+                    (d, c) => new
+                    {
+                        Name = d.Name,
+                        Ip = d.Ipaddress,
+                        Login = c.Login,
+                        Pass = c.Password,
+                        WindowPos = d.WindowPosition
+                    }).Where(p => p.WindowPos == 2);
+                foreach (var d in devices)
+                {
+                    Pos2Name.Text = d.Name;
+                    Pos2IP.Text = d.Ip;
+                    Pos2Pass.Text = d.Pass;
+                    Pos2Login.Text = d.Login;
+                }
+            }
+
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var devices = db.Devices.Join(db.Credentials,
+                    d => d.DeviceId,
+                    c => c.DeviceId,
+                    (d, c) => new
+                    {
+                        Name = d.Name,
+                        Ip = d.Ipaddress,
+                        Login = c.Login,
+                        Pass = c.Password,
+                        WindowPos = d.WindowPosition
+                    }).Where(p => p.WindowPos == 3);
+                foreach (var d in devices)
+                {
+                    Pos3Name.Text = d.Name;
+                    Pos3IP.Text = d.Ip;
+                    Pos3Pass.Text = d.Pass;
+                    Pos3Login.Text = d.Login;
+                }
+            }
+
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var devices = db.Devices.Join(db.Credentials,
+                    d => d.DeviceId,
+                    c => c.DeviceId,
+                    (d, c) => new
+                    {
+                        Name = d.Name,
+                        Ip = d.Ipaddress,
+                        Login = c.Login,
+                        Pass = c.Password,
+                        WindowPos = d.WindowPosition
+                    }).Where(p => p.WindowPos == 4);
+                foreach (var d in devices)
+                {
+                    Pos4Name.Text = d.Name;
+                    Pos4IP.Text = d.Ip;
+                    Pos4Pass.Text = d.Pass;
+                    Pos4Login.Text = d.Login;
+                }
             }
         }
 

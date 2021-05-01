@@ -9,13 +9,14 @@ namespace NetworkMonitoring
     /// </summary>
     /// 
 
-
     public partial class MainWindow : Window
     {
 
-        public static bool isSSHConnected = false;
-        public static bool isSNMPConnected = false;
-        
+        static string nameDevice1 = null;
+        static string nameDevice2 = null;
+        static string nameDevice3 = null;
+        static string nameDevice4 = null;
+
         string name = "dynamic_stackpanel";
 
         public MainWindow()
