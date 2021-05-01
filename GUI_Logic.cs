@@ -59,5 +59,10 @@ namespace NetworkMonitoring
             getConfigTimer.Start();
         }
 
+        public void ShowOptions()
+        {
+            Options options = new Options();
+            options.Show();
+        }
     }
 }

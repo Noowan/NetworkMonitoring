@@ -76,6 +76,12 @@ namespace NetworkMonitoring
             gl.EnableSSHConfigTimer("PE-3");
             gl.EnableSSHConfigTimer("PE-4");
         }
+
+        private void OpenOptions(object sender, MouseButtonEventArgs e)
+        {
+            GUI_Logic gl = new GUI_Logic();
+            gl.ShowOptions();
+        }
     }
 
 
