@@ -21,12 +21,6 @@ namespace NetworkMonitoring
         public MainWindow()
         {
             InitializeComponent();
-            GUI_Logic gl = new();
-            gl.EnableSSHConfigTimer("PE-1");
-            gl.EnableSSHConfigTimer("PE-2");
-            gl.EnableSSHConfigTimer("PE-3");
-            gl.EnableSSHConfigTimer("PE-4");
-
 
         }
 
@@ -74,6 +68,14 @@ namespace NetworkMonitoring
             gl.ShowAboutAuthor();
         }
 
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            GUI_Logic gl = new();
+            gl.EnableSSHConfigTimer("PE-1");
+            gl.EnableSSHConfigTimer("PE-2");
+            gl.EnableSSHConfigTimer("PE-3");
+            gl.EnableSSHConfigTimer("PE-4");
+        }
     }
 
 

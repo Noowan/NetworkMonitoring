@@ -54,7 +54,8 @@ namespace NetworkMonitoring
             SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + x + ".txt", x);
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
-            getConfigTimer.Interval = new TimeSpan(0, 1, 0);
+            //getConfigTimer.Interval = new TimeSpan(0, 1, 0);
+            getConfigTimer.Interval = new TimeSpan(0, 0, 30); //Debug use
             getConfigTimer.Start();
         }
 
