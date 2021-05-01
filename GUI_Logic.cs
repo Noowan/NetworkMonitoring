@@ -49,12 +49,12 @@ namespace NetworkMonitoring
             aboutAuthorWindow.Show();
         }
 
-        public void EnableSSHConfigTimer(string name)
+        public void EnableSSHConfigTimer(string x)
         {
-            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + name + ".txt", name);
+            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + x + ".txt", x);
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
-            getConfigTimer.Interval = new TimeSpan(0, 0, 10);
+            getConfigTimer.Interval = new TimeSpan(0, 1, 0);
             getConfigTimer.Start();
         }
 
