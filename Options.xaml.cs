@@ -24,9 +24,8 @@ namespace NetworkMonitoring
             InitializeComponent();
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                // получаем объекты из бд и выводим на консоль
                 var devices = db.Devices.ToList();
-                if (devices.Count == 0) 
+                if (devices.Count == 0)
                 {
                     Pos1Name.Text = "null";
                     Pos1IP.Text = "null";
@@ -44,9 +43,30 @@ namespace NetworkMonitoring
                     Pos4IP.Text = "null";
                     Pos4Login.Text = "null";
                     Pos4Pass.Text = "null";
+                    return;
                 }
             }
 
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var devices = db.Devices.Join(db.Credentials,
+                    d => d.DeviceId,
+                    c => c.DeviceId,
+                    (d, c) => new
+                    {
+                        Name = d.Name,
+                        Ip = d.Ipaddress,
+                        Login = c.Login,
+                        Pass = c.Password,
+                        WindowPos = d.WindowPosition
+                    }).Where(p => p.WindowPos == 1);
+                foreach (var d in devices)
+                {
+                    Pos1Name.Text = d.Name;
+                    Pos1IP.Text = d.Ip;
+                }
+                    
+            }
         }
 
         private void CloseButton_Click(object sender, MouseButtonEventArgs e)
@@ -56,7 +76,10 @@ namespace NetworkMonitoring
 
         private void Pos1Button_Click(object sender, MouseButtonEventArgs e)
         {
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
 
+            }
         }
         private void Pos2Button_Click(object sender, MouseButtonEventArgs e)
         {
