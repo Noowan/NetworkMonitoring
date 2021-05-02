@@ -11,22 +11,22 @@ namespace NetworkMonitoring
 
     public partial class MainWindow : Window
     {
-        static string nameDevice1 = "PE-1";
-        static string nameDevice2 = "PE-2";
-        static string nameDevice3 = "PE-3";
-        static string nameDevice4 = "PE-4";
-        static string ipDevice1 = "192.168.1.10";
-        static string ipDevice2 = "192.168.1.10";
-        static string ipDevice3 = "192.168.1.10";
-        static string ipDevice4 = "192.168.1.10";
-        static string loginDevice1 = "test";
-        static string loginDevice2 = "test";
-        static string loginDevice3 = "test";
-        static string loginDevice4 = "test";
-        static string passwordDevice1 = "test";
-        static string passwordDevice2 = "test";
-        static string passwordDevice3 = "test";
-        static string passwordDevice4 = "test";
+        public static string nameDevice1 = "PE-1";
+        public static string nameDevice2 = "PE-2";
+        public static string nameDevice3 = "PE-3";
+        public static string nameDevice4 = "PE-4";
+        public static string ipDevice1 = "192.168.1.10";
+        public static string ipDevice2 = "192.168.1.10";
+        public static string ipDevice3 = "192.168.1.10";
+        public static string ipDevice4 = "192.168.1.10";
+        public static string loginDevice1 = "test";
+        public static string loginDevice2 = "test";
+        public static string loginDevice3 = "test";
+        public static string loginDevice4 = "test";
+        public static string passwordDevice1 = "test";
+        public static string passwordDevice2 = "test";
+        public static string passwordDevice3 = "test";
+        public static string passwordDevice4 = "test";
 
 
         string name = "dynamic_stackpanel";

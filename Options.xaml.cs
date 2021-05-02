@@ -155,6 +155,7 @@ namespace NetworkMonitoring
                 {
                     device.Name = Pos1Name.Text;
                     device.Ipaddress = Pos1IP.Text;
+                    device.Name = MainWindow.nameDevice1;
                 }
 
                 var credential = db.Credentials.Where(d => d.Device.WindowPosition == 1).FirstOrDefault();
