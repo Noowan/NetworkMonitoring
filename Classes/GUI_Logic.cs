@@ -71,11 +71,20 @@ namespace NetworkMonitoring
             options.Show();
         }
 
-        public void EnableSNMPGetTimer(string name, string iP, string community)
+        public void EnableSNMPIntStatusGetTimer(string name, string iP, string community)
         {
             SNMP snmp = new SNMP(iP, community, name);
             DispatcherTimer snmptimer = new DispatcherTimer();
             snmptimer.Tick += new EventHandler(snmp.GetSnmpIntStatusValue);
+            snmptimer.Interval = new TimeSpan(0, 0, 30);
+            snmptimer.Start();
+        }
+
+        public void EnableSNMPFakeTempGetTimer(string name, string iP, string community)
+        {
+            SNMP snmp = new SNMP(iP, community, name);
+            DispatcherTimer snmptimer = new DispatcherTimer();
+            snmptimer.Tick += new EventHandler(snmp.GetFakeSNMPTempValue);
             snmptimer.Interval = new TimeSpan(0, 0, 30);
             snmptimer.Start();
         }

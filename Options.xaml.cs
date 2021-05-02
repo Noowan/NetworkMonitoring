@@ -264,10 +264,15 @@ namespace NetworkMonitoring
         private void SNMPStart(object sender, RoutedEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
-            gl.EnableSNMPGetTimer(MainWindow.nameDevice1, MainWindow.ipDevice1, "test");
-            gl.EnableSNMPGetTimer(MainWindow.nameDevice2, MainWindow.ipDevice2, "test");
-            gl.EnableSNMPGetTimer(MainWindow.nameDevice3, MainWindow.ipDevice3, "test");
-            gl.EnableSNMPGetTimer(MainWindow.nameDevice4, MainWindow.ipDevice4, "test");
+            gl.EnableSNMPIntStatusGetTimer(MainWindow.nameDevice1, MainWindow.ipDevice1, "test");
+            gl.EnableSNMPIntStatusGetTimer(MainWindow.nameDevice2, MainWindow.ipDevice2, "test");
+            gl.EnableSNMPIntStatusGetTimer(MainWindow.nameDevice3, MainWindow.ipDevice3, "test");
+            gl.EnableSNMPIntStatusGetTimer(MainWindow.nameDevice4, MainWindow.ipDevice4, "test");
+
+            gl.EnableSNMPFakeTempGetTimer(MainWindow.nameDevice1, MainWindow.ipDevice1, "test");
+            gl.EnableSNMPFakeTempGetTimer(MainWindow.nameDevice2, MainWindow.ipDevice2, "test");
+            gl.EnableSNMPFakeTempGetTimer(MainWindow.nameDevice3, MainWindow.ipDevice3, "test");
+            gl.EnableSNMPFakeTempGetTimer(MainWindow.nameDevice4, MainWindow.ipDevice4, "test");
 
         }
     }

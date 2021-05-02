@@ -75,13 +75,30 @@ namespace NetworkMonitoring.Classes
 
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                Value value = new Value { DeviceId = id, MetricName = interfacename +" status", Value1 = intstatus, ValueDate = DateTime.Now };
+                Value value = new Value { DeviceId = id, MetricName = interfacename + " status", Value1 = intstatus, ValueDate = DateTime.Now };
                 db.Values.Add(value);
                 db.SaveChanges();
             }
 
             Form.SNMPLamp.Background = new SolidColorBrush(Colors.Gray);
             Form.WriteLamp.Background = new SolidColorBrush(Colors.Gray);
+        }
+
+        public void GetFakeSNMPTempValue(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int temperature = rnd.Next(20, 70);
+        }
+
+        public void WriteFakeSNMPTempValue(int temperature)
+        {
+            int id = GetDeviceID();
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                Value value = new Value { DeviceId = id, MetricName = "Temperature", Value1 = temperature, ValueDate = DateTime.Now };
+                db.Values.Add(value);
+                db.SaveChanges();
+            }
         }
 
     }
