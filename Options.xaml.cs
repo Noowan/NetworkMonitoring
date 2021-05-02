@@ -165,7 +165,7 @@ namespace NetworkMonitoring
                     credential.Login = Pos1Login.Text;
                     credential.Password = Pos1Pass.Text;
                     MainWindow.passwordDevice1 = credential.Password;
-                    MainWindow.ipDevice1 = credential.Password;
+                    MainWindow.loginDevice1 = credential.Login ;
                 }
 
                 db.SaveChanges();
@@ -195,7 +195,7 @@ namespace NetworkMonitoring
                     credential.Login = Pos2Login.Text;
                     credential.Password = Pos2Pass.Text;
                     MainWindow.passwordDevice2 = credential.Password;
-                    MainWindow.ipDevice2 = credential.Password;
+                    MainWindow.loginDevice2 = credential.Login;
                 }
 
                 db.SaveChanges();
@@ -224,7 +224,7 @@ namespace NetworkMonitoring
                     credential.Login = Pos3Login.Text;
                     credential.Password = Pos3Pass.Text;
                     MainWindow.passwordDevice3 = credential.Password;
-                    MainWindow.ipDevice3 = credential.Password;
+                    MainWindow.loginDevice3 = credential.Login;
                 }
 
                 db.SaveChanges();
@@ -253,7 +253,7 @@ namespace NetworkMonitoring
                     credential.Login = Pos4Login.Text;
                     credential.Password = Pos4Pass.Text;
                     MainWindow.passwordDevice4 = credential.Password;
-                    MainWindow.ipDevice4 = credential.Password;
+                    MainWindow.loginDevice4 = credential.Login;
                 }
 
                 db.SaveChanges();

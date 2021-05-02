@@ -60,7 +60,7 @@ namespace NetworkMonitoring
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
             //getConfigTimer.Interval = new TimeSpan(0, 1, 0);
-            getConfigTimer.Interval = new TimeSpan(0, 0, 30); //Debug use
+            getConfigTimer.Interval = new TimeSpan(0, 0, 10); //Debug use
             getConfigTimer.Start();
         }
 
