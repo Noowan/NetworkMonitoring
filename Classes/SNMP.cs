@@ -63,7 +63,7 @@ namespace NetworkMonitoring.Classes
             for (int j = 0; j < intstatus.Count; j++)
             {
                 string stringintname = intname[j].Data.ToString();
-                int int32intstatus = Convert.ToInt32(intstatus[j]);
+                int int32intstatus = Convert.ToInt32(intstatus[j].Data.ToString());
                 WriteSNMPIntStatusValueToDB(stringintname, int32intstatus);
             }
 
@@ -75,8 +75,9 @@ namespace NetworkMonitoring.Classes
 
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                Value value = new Value { DeviceId = id, MetricName = interfacename, Value1 = intstatus, ValueDate = DateTime.Now };
+                Value value = new Value { DeviceId = id, MetricName = interfacename +" status", Value1 = intstatus, ValueDate = DateTime.Now };
                 db.Values.Add(value);
+                db.SaveChanges();
             }
 
             Form.SNMPLamp.Background = new SolidColorBrush(Colors.Gray);
