@@ -28,12 +28,12 @@ namespace NetworkMonitoring
             this.name = _n;
         }
 
+        //Получение конфига по SSH
         public void GetConfigOnTimer(object sender, EventArgs e)
         {
             using (var client = new SshClient(host, login, password))
             {
                 client.Connect();
-                MainWindow.isSSHConnected = true;
                 var terminal = client.RunCommand(command);
                 Form.SSHLamp.Background = new SolidColorBrush(Colors.Gray);
                 config = terminal.Result.ToString();
@@ -44,6 +44,7 @@ namespace NetworkMonitoring
             }
         }
 
+        //Запись конфига
         public async void WriteConfig(string name)
         {
             string writePath = "Router Configs\\" + name + ".txt";

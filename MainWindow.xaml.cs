@@ -9,13 +9,11 @@ namespace NetworkMonitoring
     /// </summary>
     /// 
 
-
     public partial class MainWindow : Window
     {
 
-        public static bool isSSHConnected = false;
-        public static bool isSNMPConnected = false;
-        
+
+
         string name = "dynamic_stackpanel";
 
         public MainWindow()
@@ -24,6 +22,7 @@ namespace NetworkMonitoring
 
         }
 
+        //При нажатии на роутер открывает stackbox
         public void RouterClick(object sender, MouseButtonEventArgs e)
         {
             //Создаем StackPanel с кнопками и помещаем рядом с курсором
@@ -31,6 +30,7 @@ namespace NetworkMonitoring
             gl.CreateStackPanel(name);
         }
 
+        //Действия при нажатии на кнопку stackpanel
         public void StackPanel_ButtonClick(object sender, RoutedEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
@@ -55,18 +55,21 @@ namespace NetworkMonitoring
             }
         }
 
+        //Показать окно about
         private void AboutClick(object sender, MouseButtonEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
             gl.ShowAbout();
         }
 
+        //Показать окно об авторе
         private void AboutAuthorClick(object sender, MouseButtonEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
             gl.ShowAboutAuthor();
         }
 
+        //Включить опрос при нажатии чекбокса
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             GUI_Logic gl = new();
@@ -76,6 +79,7 @@ namespace NetworkMonitoring
             gl.EnableSSHConfigTimer("PE-4");
         }
 
+        //Открыть окно опций
         private void OpenOptions(object sender, MouseButtonEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
