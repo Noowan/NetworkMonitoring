@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using Renci.SshNet;
@@ -9,7 +10,6 @@ namespace NetworkMonitoring
 
     class SSHGetConfig
     {
-
         public static string config;
 
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
@@ -39,12 +39,29 @@ namespace NetworkMonitoring
                 config = terminal.Result.ToString();
                 client.Disconnect();
                 Form.WriteLamp.Background = new SolidColorBrush(Colors.Green);
-                WriteConfig(name);
+                WriteConfigToDB(name);
 
             }
         }
 
-        //Запись конфига
+        //Запись конфига в БД
+        public void WriteConfigToDB(string name)
+        {
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var config = db.Configs.Where(d => d.Device.Name == name).FirstOrDefault();
+                if (config.Device.Name == name)
+                {
+                    config.ConfigString = SSHGetConfig.config;
+                }
+                db.SaveChanges();
+            }
+            Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
+            Form.WriteLamp.Background = new SolidColorBrush(Colors.Gray);
+
+        }
+
+        //Запись конфига в файл
         public async void WriteConfig(string name)
         {
             string writePath = "Router Configs\\" + name + ".txt";
@@ -62,5 +79,8 @@ namespace NetworkMonitoring
                 MessageBox.Show(e.Message);
             }
         }
+
+      
     }
 }
+
