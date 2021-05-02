@@ -8,8 +8,26 @@ using System.Windows.Threading;
 
 namespace NetworkMonitoring
 {
+
     class GUI_Logic
     {
+        static string nameDevice1 = "PE-1";
+        static string nameDevice2 = "PE-2";
+        static string nameDevice3 = "PE-3";
+        static string nameDevice4 = "PE-4";
+        static string ipDevice1 = "192.168.1.10";
+        static string ipDevice2 = "192.168.1.10";
+        static string ipDevice3 = "192.168.1.10";
+        static string loginDevice1 = "test";
+        static string loginDevice2 = "test";
+        static string loginDevice3 = "test";
+        static string loginDevice4 = "test";
+        static string passwordDevice1 = "test";
+        static string passwordDevice2 = "test";
+        static string passwordDevice3 = "test";
+        static string passwordDevice4 = "test";
+
+
         //Даем возможность обращаться к контролам
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
 
@@ -51,9 +69,9 @@ namespace NetworkMonitoring
             aboutAuthorWindow.Show();
         }
 
-        public void EnableSSHConfigTimer(string x)
+        public void EnableSSHConfigTimer(string name)
         {
-            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + x + ".txt", x);
+            SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + name + ".txt", name);
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
             //getConfigTimer.Interval = new TimeSpan(0, 1, 0);

@@ -143,6 +143,7 @@ namespace NetworkMonitoring
             this.Close();
         }
 
+        //Записать данные о устройстве в позиции 1
         private void Pos1Button_Click(object sender, MouseButtonEventArgs e)
         {
 
@@ -159,27 +160,89 @@ namespace NetworkMonitoring
                 var credential = db.Credentials.Where(d => d.Device.WindowPosition == 1).FirstOrDefault();
                 if (credential.Device.WindowPosition == 1)
                 {
-                    credential.Login = Pos1IP.Text;
+                    credential.Login = Pos1Login.Text;
                     credential.Password = Pos1Pass.Text;
                 }
 
                 db.SaveChanges();
+                MessageBox.Show("Сохранено");
 
             }
         }
+
+        //Записать данные о устройстве в позиции 2
         private void Pos2Button_Click(object sender, MouseButtonEventArgs e)
         {
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var device = db.Devices.Where(d => d.WindowPosition == 2).FirstOrDefault();
 
+                if (device.WindowPosition == 2)
+                {
+                    device.Name = Pos2Name.Text;
+                    device.Ipaddress = Pos2IP.Text;
+                }
+
+                var credential = db.Credentials.Where(d => d.Device.WindowPosition == 2).FirstOrDefault();
+                if (credential.Device.WindowPosition == 2)
+                {
+                    credential.Login = Pos2Login.Text;
+                    credential.Password = Pos2Pass.Text;
+                }
+
+                db.SaveChanges();
+                MessageBox.Show("Сохранено");
+            }
         }
 
+        //Записать данные о устройстве в позиции 3
         private void Pos3Button_Click(object sender, MouseButtonEventArgs e)
         {
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var device = db.Devices.Where(d => d.WindowPosition == 3).FirstOrDefault();
 
+                if (device.WindowPosition == 3)
+                {
+                    device.Name = Pos3Name.Text;
+                    device.Ipaddress = Pos3IP.Text;
+                }
+
+                var credential = db.Credentials.Where(d => d.Device.WindowPosition == 3).FirstOrDefault();
+                if (credential.Device.WindowPosition == 3)
+                {
+                    credential.Login = Pos3Login.Text;
+                    credential.Password = Pos3Pass.Text;
+                }
+
+                db.SaveChanges();
+                MessageBox.Show("Сохранено");
+            }
         }
 
+        //Записать данные о устройстве в позиции 3
         private void Pos4Button_Click(object sender, MouseButtonEventArgs e)
         {
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var device = db.Devices.Where(d => d.WindowPosition == 4).FirstOrDefault();
 
+                if (device.WindowPosition == 4)
+                {
+                    device.Name = Pos4Name.Text;
+                    device.Ipaddress = Pos4IP.Text;
+                }
+
+                var credential = db.Credentials.Where(d => d.Device.WindowPosition == 4).FirstOrDefault();
+                if (credential.Device.WindowPosition == 4)
+                {
+                    credential.Login = Pos4Login.Text;
+                    credential.Password = Pos4Pass.Text;
+                }
+
+                db.SaveChanges();
+                MessageBox.Show("Сохранено");
+            }
         }
     }
 }
