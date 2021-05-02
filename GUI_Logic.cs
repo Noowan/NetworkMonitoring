@@ -11,22 +11,6 @@ namespace NetworkMonitoring
 
     class GUI_Logic
     {
-        static string nameDevice1 = "PE-1";
-        static string nameDevice2 = "PE-2";
-        static string nameDevice3 = "PE-3";
-        static string nameDevice4 = "PE-4";
-        static string ipDevice1 = "192.168.1.10";
-        static string ipDevice2 = "192.168.1.10";
-        static string ipDevice3 = "192.168.1.10";
-        static string loginDevice1 = "test";
-        static string loginDevice2 = "test";
-        static string loginDevice3 = "test";
-        static string loginDevice4 = "test";
-        static string passwordDevice1 = "test";
-        static string passwordDevice2 = "test";
-        static string passwordDevice3 = "test";
-        static string passwordDevice4 = "test";
-
 
         //Даем возможность обращаться к контролам
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
@@ -69,7 +53,7 @@ namespace NetworkMonitoring
             aboutAuthorWindow.Show();
         }
 
-        public void EnableSSHConfigTimer(string name)
+        public void EnableSSHConfigTimer(string name, string iP, string login, string password)
         {
             SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + name + ".txt", name);
             DispatcherTimer getConfigTimer = new DispatcherTimer();
