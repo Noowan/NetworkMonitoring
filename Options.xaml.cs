@@ -137,6 +137,7 @@ namespace NetworkMonitoring
             }
         }
 
+        //Закрыть форму
         private void CloseButton_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
@@ -144,8 +145,25 @@ namespace NetworkMonitoring
 
         private void Pos1Button_Click(object sender, MouseButtonEventArgs e)
         {
+
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
+                var device = db.Devices.Where(d => d.WindowPosition == 1).FirstOrDefault();
+
+                if (device.WindowPosition == 1)
+                {
+                    device.Name = Pos1Name.Text;
+                    device.Ipaddress = Pos1IP.Text;
+                }
+
+                var credential = db.Credentials.Where(d => d.Device.WindowPosition == 1).FirstOrDefault();
+                if (credential.Device.WindowPosition == 1)
+                {
+                    credential.Login = Pos1IP.Text;
+                    credential.Password = Pos1Pass.Text;
+                }
+
+                db.SaveChanges();
 
             }
         }
