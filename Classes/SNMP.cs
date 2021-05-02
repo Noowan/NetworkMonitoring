@@ -88,6 +88,7 @@ namespace NetworkMonitoring.Classes
         {
             Random rnd = new Random();
             int temperature = rnd.Next(20, 70);
+            WriteFakeSNMPTempValue(temperature);
         }
 
         public void WriteFakeSNMPTempValue(int temperature)
