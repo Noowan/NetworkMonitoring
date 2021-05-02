@@ -18,6 +18,7 @@ namespace NetworkMonitoring
         static string ipDevice1 = "192.168.1.10";
         static string ipDevice2 = "192.168.1.10";
         static string ipDevice3 = "192.168.1.10";
+        static string ipDevice4 = "192.168.1.10";
         static string loginDevice1 = "test";
         static string loginDevice2 = "test";
         static string loginDevice3 = "test";
@@ -87,10 +88,11 @@ namespace NetworkMonitoring
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             GUI_Logic gl = new();
-            gl.EnableSSHConfigTimer("PE-1");
-            gl.EnableSSHConfigTimer("PE-2");
-            gl.EnableSSHConfigTimer("PE-3");
-            gl.EnableSSHConfigTimer("PE-4");
+            gl.EnableSSHConfigTimer(nameDevice1, ipDevice1, loginDevice1, passwordDevice1);
+            gl.EnableSSHConfigTimer(nameDevice2, ipDevice2, loginDevice2, passwordDevice2);
+            gl.EnableSSHConfigTimer(nameDevice3, ipDevice3, loginDevice3, passwordDevice3);
+            gl.EnableSSHConfigTimer(nameDevice4, ipDevice4, loginDevice4, passwordDevice4);
+
         }
 
         //Открыть окно опций
