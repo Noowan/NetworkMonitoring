@@ -98,8 +98,6 @@ namespace NetworkMonitoring
 
                 entity.Property(e => e.DeviceId).HasColumnName("deviceID");
 
-                entity.Property(e => e.MetricId).HasColumnName("metricID");
-
                 entity.Property(e => e.MetricName)
                     .IsRequired()
                     .HasColumnName("metricName");

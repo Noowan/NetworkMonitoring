@@ -75,20 +75,9 @@ namespace NetworkMonitoring.Classes
 
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                Value value = new Value { DeviceId = id, MetricName = interfacename, Value1 = intstatus };
-
+                Value value = new Value { DeviceId = id, MetricName = interfacename, Value1 = intstatus, ValueDate = DateTime.Now };
+                db.Values.Add(value);
             }
-
-            //using (NetworkMonitoringContext db = new NetworkMonitoringContext())
-            //{
-            //    var deviceId = db.Devices.Where(d => d.Name == name).FirstOrDefault();
-
-
-            //    var config = db.Configs.Where(d => d.DeviceId == deviceId.DeviceId).FirstOrDefault();
-            //    config.ConfigString = SSHGetConfig.config;
-
-            //    db.SaveChanges();
-            //}
 
             Form.SNMPLamp.Background = new SolidColorBrush(Colors.Gray);
             Form.WriteLamp.Background = new SolidColorBrush(Colors.Gray);

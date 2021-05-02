@@ -9,10 +9,10 @@ namespace NetworkMonitoring
     {
         public int ValueId { get; set; }
         public int DeviceId { get; set; }
-        public int MetricId { get; set; }
         public string MetricName { get; set; }
         public int? Value1 { get; set; }
         public string ValueStr { get; set; }
+        public DateTime ValueDate { get; set; }
 
         public virtual Device Device { get; set; }
     }
