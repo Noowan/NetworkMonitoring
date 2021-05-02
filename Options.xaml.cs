@@ -156,6 +156,7 @@ namespace NetworkMonitoring
                     device.Name = Pos1Name.Text;
                     device.Ipaddress = Pos1IP.Text;
                     device.Name = MainWindow.nameDevice1;
+                    device.Ipaddress = MainWindow.ipDevice1;
                 }
 
                 var credential = db.Credentials.Where(d => d.Device.WindowPosition == 1).FirstOrDefault();
@@ -163,6 +164,8 @@ namespace NetworkMonitoring
                 {
                     credential.Login = Pos1Login.Text;
                     credential.Password = Pos1Pass.Text;
+                    credential.Password = MainWindow.passwordDevice1;
+                    credential.Password = MainWindow.ipDevice1;
                 }
 
                 db.SaveChanges();
@@ -182,6 +185,8 @@ namespace NetworkMonitoring
                 {
                     device.Name = Pos2Name.Text;
                     device.Ipaddress = Pos2IP.Text;
+                    device.Name = MainWindow.nameDevice2;
+                    device.Ipaddress = MainWindow.ipDevice2;
                 }
 
                 var credential = db.Credentials.Where(d => d.Device.WindowPosition == 2).FirstOrDefault();
@@ -189,6 +194,8 @@ namespace NetworkMonitoring
                 {
                     credential.Login = Pos2Login.Text;
                     credential.Password = Pos2Pass.Text;
+                    credential.Password = MainWindow.passwordDevice2;
+                    credential.Password = MainWindow.ipDevice2;
                 }
 
                 db.SaveChanges();
@@ -207,6 +214,8 @@ namespace NetworkMonitoring
                 {
                     device.Name = Pos3Name.Text;
                     device.Ipaddress = Pos3IP.Text;
+                    device.Name = MainWindow.nameDevice3;
+                    device.Ipaddress = MainWindow.ipDevice3;
                 }
 
                 var credential = db.Credentials.Where(d => d.Device.WindowPosition == 3).FirstOrDefault();
@@ -214,6 +223,8 @@ namespace NetworkMonitoring
                 {
                     credential.Login = Pos3Login.Text;
                     credential.Password = Pos3Pass.Text;
+                    credential.Password = MainWindow.passwordDevice3;
+                    credential.Password = MainWindow.ipDevice3;
                 }
 
                 db.SaveChanges();
@@ -232,6 +243,8 @@ namespace NetworkMonitoring
                 {
                     device.Name = Pos4Name.Text;
                     device.Ipaddress = Pos4IP.Text;
+                    device.Name = MainWindow.nameDevice4;
+                    device.Ipaddress = MainWindow.ipDevice4;
                 }
 
                 var credential = db.Credentials.Where(d => d.Device.WindowPosition == 4).FirstOrDefault();
@@ -239,6 +252,8 @@ namespace NetworkMonitoring
                 {
                     credential.Login = Pos4Login.Text;
                     credential.Password = Pos4Pass.Text;
+                    credential.Password = MainWindow.passwordDevice4;
+                    credential.Password = MainWindow.ipDevice4;
                 }
 
                 db.SaveChanges();
