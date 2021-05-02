@@ -61,7 +61,7 @@ namespace NetworkMonitoring
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
             //getConfigTimer.Interval = new TimeSpan(0, 1, 0);
-            getConfigTimer.Interval = new TimeSpan(0, 0, 10); //Debug use
+            getConfigTimer.Interval = new TimeSpan(0, 0, 60); //Debug use
             getConfigTimer.Start();
         }
 
@@ -76,7 +76,7 @@ namespace NetworkMonitoring
             SNMP snmp = new SNMP(iP, community, name);
             DispatcherTimer snmptimer = new DispatcherTimer();
             snmptimer.Tick += new EventHandler(snmp.GetSnmpIntStatusValue);
-            snmptimer.Interval = new TimeSpan(0, 0, 10);
+            snmptimer.Interval = new TimeSpan(0, 0, 30);
             snmptimer.Start();
         }
     }
