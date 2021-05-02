@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetworkMonitoring.Classes;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,7 +57,7 @@ namespace NetworkMonitoring
         public void EnableSSHConfigTimer(string name, string iP, string login, string password)
         {
             //SSHGetConfig sSHGetConfig = new("192.168.1.10", "test", "test", "cat /tmp/" + name + ".txt", name);
-            SSHGetConfig sSHGetConfig = new(iP, login, password, "cat /tmp/" + name +".txt", name);
+            SSHGetConfig sSHGetConfig = new(iP, login, password, "cat /tmp/" + name + ".txt", name);
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(sSHGetConfig.GetConfigOnTimer);
             //getConfigTimer.Interval = new TimeSpan(0, 1, 0);
@@ -68,6 +69,15 @@ namespace NetworkMonitoring
         {
             Options options = new Options();
             options.Show();
+        }
+
+        public void EnableSNMPGetTimer(string name, string iP, string community)
+        {
+            SNMP snmp = new SNMP(iP, community, name);
+            DispatcherTimer snmptimer = new DispatcherTimer();
+            snmptimer.Tick += new EventHandler(snmp.GetSnmpIntStatusValue);
+            snmptimer.Interval = new TimeSpan(0, 0, 10);
+            snmptimer.Start();
         }
     }
 }
