@@ -13,12 +13,14 @@ namespace NetworkMonitoring
         //Даем возможность обращаться к контролам
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
 
+        //Удаление stackpanel
         public void DeleteStackPanel(string name)
         {
             UIElement foundStackPanel = Form.grid2.Children.OfType<StackPanel>().Where(x => x.Name.ToString() == name).FirstOrDefault();
             Form.grid2.Children.Remove(foundStackPanel);
         }
 
+        //Создание stackpanel
         public void CreateStackPanel(string name)
         {
             var sp = new StackPanel();

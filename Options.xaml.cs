@@ -22,6 +22,7 @@ namespace NetworkMonitoring
         public Options()
         {
             InitializeComponent();
+            //Поставить везде null, если в базе нет значений
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
                 var devices = db.Devices.ToList();
@@ -46,7 +47,7 @@ namespace NetworkMonitoring
                     return;
                 }
             }
-
+            //Подставить значения для элемента на позиции 1
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
                 var devices = db.Devices.Join(db.Credentials,
@@ -68,7 +69,7 @@ namespace NetworkMonitoring
                     Pos1Login.Text = d.Login;
                 }
             }
-
+            //Подставить значения для элемента на позиции 2
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
                 var devices = db.Devices.Join(db.Credentials,
@@ -90,7 +91,7 @@ namespace NetworkMonitoring
                     Pos2Login.Text = d.Login;
                 }
             }
-
+            //Подставить значения для элемента на позиции 3
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
                 var devices = db.Devices.Join(db.Credentials,
@@ -112,7 +113,7 @@ namespace NetworkMonitoring
                     Pos3Login.Text = d.Login;
                 }
             }
-
+            //Подставить значения для элемента на позиции 4
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
                 var devices = db.Devices.Join(db.Credentials,
