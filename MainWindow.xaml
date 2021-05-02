@@ -71,7 +71,7 @@
                 <CheckBox Content="Включить опрос" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" VerticalContentAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                 <RadioButton Name ="WriteLamp" Content="Запись в БД" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" IsManipulationEnabled="False" IsHitTestVisible="False" FontSize="10" VerticalContentAlignment="Center"/>
                 <RadioButton Name ="SSHLamp" Content="Опрос SSH" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False" FontSize="10" VerticalContentAlignment="Center"/>
-                <RadioButton Content="Опрос SNMP" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False" FontSize="10" VerticalContentAlignment="Center"/>
+                <RadioButton Name ="SNMPLamp" Content="Опрос SNMP" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Red" IsHitTestVisible="False" FontSize="10" VerticalContentAlignment="Center"/>
             </Menu>
 
             <Button Style="{StaticResource Router}" Template="{StaticResource NoMouseOverButtonTemplate}" Grid.Column="0" Grid.Row="1" Name ="R1"  VerticalAlignment="Top" Margin="50" Height="68" Width="84" PreviewMouseLeftButtonDown="RouterClick" BorderThickness="0"></Button>

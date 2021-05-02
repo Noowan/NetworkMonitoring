@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace NetworkMonitoring.Classes
 {
@@ -38,6 +39,7 @@ namespace NetworkMonitoring.Classes
 
         public void GetSnmpIntStatusValue(object sender, EventArgs e)
         {
+            Form.SNMPLamp.Background = new SolidColorBrush(Colors.Gray);
             var intstatus = new List<Variable>();
             Messenger.Walk(VersionCode.V1,
                            new IPEndPoint(IPAddress.Parse(ip), 161),
@@ -56,14 +58,42 @@ namespace NetworkMonitoring.Classes
                            60000,
                            WalkMode.WithinSubtree);
 
+            Form.WriteLamp.Background = new SolidColorBrush(Colors.Green);
+
+            for (int j = 0; j < intstatus.Count; j++)
+            {
+                string stringintname = intname[j].Data.ToString();
+                int int32intstatus = Convert.ToInt32(intstatus[j]);
+                WriteSNMPIntStatusValueToDB(stringintname, int32intstatus);
+            }
 
         }
 
-        public void WriteSNMPIntStatusValueToDB(int interfacename, string intstatus)
+        public void WriteSNMPIntStatusValueToDB(string interfacename, int intstatus)
         {
             int id = GetDeviceID();
 
-        }
-    }
-}
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                Value value = new Value { DeviceId = id, MetricName = interfacename, Value1 = intstatus };
 
+            }
+
+            //using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            //{
+            //    var deviceId = db.Devices.Where(d => d.Name == name).FirstOrDefault();
+
+
+            //    var config = db.Configs.Where(d => d.DeviceId == deviceId.DeviceId).FirstOrDefault();
+            //    config.ConfigString = SSHGetConfig.config;
+
+            //    db.SaveChanges();
+            //}
+
+            Form.SNMPLamp.Background = new SolidColorBrush(Colors.Gray);
+            Form.WriteLamp.Background = new SolidColorBrush(Colors.Gray);
+        }
+
+    }
+
+}
