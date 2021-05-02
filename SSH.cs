@@ -49,11 +49,12 @@ namespace NetworkMonitoring
         {
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                var config = db.Configs.Where(d => d.Device.Name == name).FirstOrDefault();
-                if (config.Device.Name == name)
-                {
-                    config.ConfigString = SSHGetConfig.config;
-                }
+                var deviceId = db.Devices.Where(d => d.Name == name).FirstOrDefault();
+
+
+                var config = db.Configs.Where(d => d.DeviceId == deviceId.DeviceId).FirstOrDefault();
+                config.ConfigString = SSHGetConfig.config;
+
                 db.SaveChanges();
             }
             Form.SSHLamp.Background = new SolidColorBrush(Colors.Green);
