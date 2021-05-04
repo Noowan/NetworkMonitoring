@@ -36,7 +36,7 @@ namespace NetworkMonitoring
 
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Проверить доступность", Name = "Command1" });
-            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 2", Name = "Command2" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Последние данные", Name = "Command2" });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 3", Name = "Command3" });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 4", Name = "Command4" });
             TranslateTransform transform1 = new TranslateTransform();
