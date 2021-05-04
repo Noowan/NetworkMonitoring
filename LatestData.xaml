@@ -16,30 +16,19 @@
         </Grid.ColumnDefinitions>
 
         <Menu Grid.Row="0" VerticalAlignment="Top">
-            <ComboBox Margin="0,3,0,3" Width="300" VerticalAlignment="Center"></ComboBox>
+            <ComboBox Name="ComboBox" Margin="0,3,0,3" Width="300" VerticalAlignment="Center"></ComboBox>
             <Label Margin ="10,0,0,0" Content="С:"></Label>
-            <DatePicker Margin="-10,0,0,0"></DatePicker>
+            <DatePicker Name="DateFrom" Margin="-10,0,0,0"></DatePicker>
             <Label Margin="10,0,0,0" Content="По:"></Label>
-            <DatePicker Margin="-10,0,0,0" IsTodayHighlighted="True"></DatePicker>
+            <DatePicker Name="DateTill" Margin="-10,0,0,0" IsTodayHighlighted="True"></DatePicker>
             <Button Margin="50,0,0,0" Content="Показать" PreviewMouseLeftButtonDown="ViewButtonClick"></Button>
 
         </Menu>
 
-        <!--<ListView Grid.Row="1"  Name="lstw">
-                <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Path=ModelName}"></GridViewColumn>
-                        <GridViewColumn Header="Значение" DisplayMemberBinding="{Binding Path=ModelNumber}"></GridViewColumn>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>-->
-
-        <DataGrid Grid.Row="1" x:Name="datagrid"  AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" x:Name="datagrid"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ValueDate}" Header="Дата"/>
-                <DataGridTextColumn Binding="{Binding Value1}" Header="Значение"/>
+                <DataGridTextColumn Binding="{Binding ValueDate}" Header="Дата" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Value1}" Header="Значение" Width="300"/>
             </DataGrid.Columns>
         </DataGrid>
 
