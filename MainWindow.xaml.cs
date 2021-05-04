@@ -61,7 +61,7 @@ namespace NetworkMonitoring
                 gl.CheckAvailability(whichPressed);
             }
 
-            if (e.Source.ToString().Contains("Опция 2"))
+            if (e.Source.ToString().Contains("Последние данные"))
             {
                 gl.DeleteStackPanel(name);
                 LatestData ld = new();
