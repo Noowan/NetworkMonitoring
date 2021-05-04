@@ -64,6 +64,8 @@ namespace NetworkMonitoring
             if (e.Source.ToString().Contains("Опция 2"))
             {
                 gl.DeleteStackPanel(name);
+                LatestData ld = new();
+                ld.Show();
             }
 
             if (e.Source.ToString().Contains("Опция 3"))
