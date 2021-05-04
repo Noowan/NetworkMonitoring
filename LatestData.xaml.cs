@@ -22,12 +22,12 @@ namespace NetworkMonitoring
     {
         string pressedDevice;
         int deviceId;
-        int comboBoxSelection;
-        int dateFrom;
-        int dateTill;
+        string comboBoxSelection;
+        DateTime dateFrom;
+        DateTime dateTill;
         public LatestData()
         {
-            
+
             InitializeComponent();
             if (MainWindow.whichPressed == "R1") { pressedDevice = MainWindow.nameDevice1; }
             if (MainWindow.whichPressed == "R2") { pressedDevice = MainWindow.nameDevice2; }
@@ -50,9 +50,6 @@ namespace NetworkMonitoring
                     ComboBox.Items.Add(c.Key);
                 }
             }
-
-
-
         }
 
 
@@ -60,11 +57,11 @@ namespace NetworkMonitoring
         {
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                var values1 = db.Values.Where(v => v.DeviceId == 7 && v.MetricName.Contains("0/1")) ;
-                datagrid.ItemsSource = values1.ToList();
-                
-            } 
-
+                //var values1 = db.Values.Where(v => v.DeviceId == 7 && v.MetricName.Contains("0/1"));
+                //datagrid.ItemsSource = values1.ToList();
+                var values = db.Values.Where(v => v.DeviceId == deviceId && v.MetricName == comboBoxSelection && v.ValueDate >= dateFrom && v.ValueDate <= dateTill);
+                datagrid.ItemsSource = values.ToList();
+            }
         }
 
         public int GetDeviceID()
@@ -74,6 +71,22 @@ namespace NetworkMonitoring
                 var device = db.Devices.Where(d => d.Name == pressedDevice).FirstOrDefault();
                 return device.DeviceId;
             }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            comboBoxSelection = ComboBox.SelectedItem.ToString();
+        }
+
+        private void DateFrom_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dateFrom = (DateTime)DateFrom.SelectedDate;
+        }
+
+        private void DateTill_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dateTill = (DateTime)DateTill.SelectedDate;
         }
     }
 
