@@ -1,5 +1,5 @@
-﻿using System.Threading;
-using System.Windows;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace NetworkMonitoring
@@ -27,6 +27,9 @@ namespace NetworkMonitoring
         public static string passwordDevice2 = "test";
         public static string passwordDevice3 = "test";
         public static string passwordDevice4 = "test";
+        public static string whichPressed = null;
+        public static bool isSNMPAvailable = true;
+        public static bool isICMPAvailable = true;
 
 
         string name = "dynamic_stackpanel";
@@ -43,15 +46,19 @@ namespace NetworkMonitoring
             //Создаем StackPanel с кнопками и помещаем рядом с курсором
             GUI_Logic gl = new GUI_Logic();
             gl.CreateStackPanel(name);
+            whichPressed = (sender as Button).Name;
+            
+
         }
 
         //Действия при нажатии на кнопку stackpanel
         public void StackPanel_ButtonClick(object sender, RoutedEventArgs e)
         {
             GUI_Logic gl = new GUI_Logic();
-            if (e.Source.ToString().Contains("Опция 1"))
+            if (e.Source.ToString().Contains("Проверить доступность"))
             {
                 gl.DeleteStackPanel(name);
+                gl.CheckAvailability(whichPressed);
             }
 
             if (e.Source.ToString().Contains("Опция 2"))
