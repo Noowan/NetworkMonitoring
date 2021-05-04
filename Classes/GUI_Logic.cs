@@ -35,10 +35,10 @@ namespace NetworkMonitoring
             sp.Name = name;
 
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
-            sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Проверить доступность", Name = "Command1" });
-            sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 2", Name = "Command2" });
-            sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 3", Name = "Command3" });
-            sp.Children.Add(new Button { Width = 100, Height = 30, Content = "Опция 4", Name = "Command4" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Проверить доступность", Name = "Command1" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 2", Name = "Command2" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 3", Name = "Command3" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 4", Name = "Command4" });
             TranslateTransform transform1 = new TranslateTransform();
             transform1.X = Mouse.GetPosition(Form.grid1).X - 350;
             transform1.Y = Mouse.GetPosition(Form.grid1).Y - 100;
@@ -128,6 +128,7 @@ namespace NetworkMonitoring
                 Ping pingSender = new();
                 PingReply reply = pingSender.Send(IPAddress.Parse(device.Ipaddress), 10000);
                 if (reply.Status.ToString() != "Success") { MainWindow.isICMPAvailable = false; }
+                MessageBox.Show($"{pressedDevice}:\nSNMP - {MainWindow.isSNMPAvailable.ToString()}\nICMP- {MainWindow.isSNMPAvailable.ToString()}");
 
             }
         }
