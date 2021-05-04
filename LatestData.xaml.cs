@@ -22,6 +22,20 @@ namespace NetworkMonitoring
         public LatestData()
         {
             InitializeComponent();
+
+        }
+
+
+        private void ViewButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+            {
+                var values = db.Values.Where(v => v.DeviceId == 7 && v.MetricName.Contains("0/1")) ;
+                datagrid.ItemsSource = values.ToList();
+            } 
+                
+
         }
     }
+
 }
