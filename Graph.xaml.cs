@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace NetworkMonitoring
 {
@@ -53,10 +55,42 @@ namespace NetworkMonitoring
 
         private void ViewButtonClick(object sender, MouseButtonEventArgs e)
         {
+            
+
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
                 var values = db.Values.Where(v => v.DeviceId == deviceId && v.MetricName == comboBoxSelection && v.ValueDate >= dateFrom && v.ValueDate <= dateTill);
-                datagrid.ItemsSource = values.ToList();
+                
+                //YFormatter = value => value.ToString("C");
+                string[] timestamps = new string[values.Count()];
+                int i = 0;
+                foreach (var v in values)
+                {
+                    timestamps[i] = v.ValueDate.ToString();
+                    i++;
+                }
+
+                //int[] seriesCollection = new int[values.Count()];
+                //i = 0;
+                //foreach (var v in values)
+                //{
+                //    seriesCollection[i] = Convert.ToInt32(v.Value1);
+                //}
+
+                SeriesCollection = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Статусы",
+                    Values = new ChartValues<int> { 1, 2, 1, 1 ,1,1,2,2,1,1,1,1,1,1,1,1 }
+                }
+            };
+
+
+
+
+                
+                DataContext = this;
             }
         }
 
@@ -85,5 +119,7 @@ namespace NetworkMonitoring
             dateTill = (DateTime)DateTill.SelectedDate;
             dateTill = dateTill.AddHours(23).AddMinutes(59).AddSeconds(59);
         }
+
+        public SeriesCollection SeriesCollection { get; set; }
     }
 }
