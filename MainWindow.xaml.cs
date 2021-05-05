@@ -72,6 +72,8 @@ namespace NetworkMonitoring
             if (e.Source.ToString().Contains("Посмотреть конфигурацию"))
             {
                 gl.DeleteStackPanel(name);
+                ConfigWindow cw = new();
+                cw.Show();
             }
 
             if (e.Source.ToString().Contains("Посмотреть графики последних значений"))

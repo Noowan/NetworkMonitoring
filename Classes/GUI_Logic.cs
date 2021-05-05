@@ -132,22 +132,5 @@ namespace NetworkMonitoring
 
             }
         }
-
-        //public void ShowDeviceConfiguration(string pressedButtonName)
-        //{
-        //    string pressedDevice = null;
-
-        //    if (pressedButtonName == "R1") { pressedDevice = MainWindow.nameDevice1; }
-        //    if (pressedButtonName == "R2") { pressedDevice = MainWindow.nameDevice2; }
-        //    if (pressedButtonName == "R3") { pressedDevice = MainWindow.nameDevice3; }
-        //    if (pressedButtonName == "R4") { pressedDevice = MainWindow.nameDevice4; }
-
-        //    using (NetworkMonitoringContext db = new NetworkMonitoringContext())
-        //    {
-        //        var config = db.Configs.Where(c => c.Device.Name == pressedDevice).FirstOrDefault();
-        //    }
-
-        //}
-
     }
 }
