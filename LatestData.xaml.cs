@@ -57,8 +57,6 @@ namespace NetworkMonitoring
         {
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                //var values1 = db.Values.Where(v => v.DeviceId == 7 && v.MetricName.Contains("0/1"));
-                //datagrid.ItemsSource = values1.ToList();
                 var values = db.Values.Where(v => v.DeviceId == deviceId && v.MetricName == comboBoxSelection && v.ValueDate >= dateFrom && v.ValueDate <= dateTill);
                 datagrid.ItemsSource = values.ToList();
             }
@@ -87,6 +85,7 @@ namespace NetworkMonitoring
         private void DateTill_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             dateTill = (DateTime)DateTill.SelectedDate;
+            dateTill = dateTill.AddHours(23).AddMinutes(59).AddSeconds(59);
         }
     }
 
