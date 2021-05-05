@@ -37,7 +37,7 @@ namespace NetworkMonitoring
             sp.Children.Add(new TextBlock { Text = "Доступные команды", Width = 130, Height = 30 });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Проверить доступность", Name = "Command1" });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Последние данные", Name = "Command2" });
-            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 3", Name = "Command3" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Посмотреть конфигурацию", Name = "Command3" });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 4", Name = "Command4" });
             TranslateTransform transform1 = new TranslateTransform();
             transform1.X = Mouse.GetPosition(Form.grid1).X - 350;
@@ -132,6 +132,22 @@ namespace NetworkMonitoring
 
             }
         }
+
+        //public void ShowDeviceConfiguration(string pressedButtonName)
+        //{
+        //    string pressedDevice = null;
+
+        //    if (pressedButtonName == "R1") { pressedDevice = MainWindow.nameDevice1; }
+        //    if (pressedButtonName == "R2") { pressedDevice = MainWindow.nameDevice2; }
+        //    if (pressedButtonName == "R3") { pressedDevice = MainWindow.nameDevice3; }
+        //    if (pressedButtonName == "R4") { pressedDevice = MainWindow.nameDevice4; }
+
+        //    using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+        //    {
+        //        var config = db.Configs.Where(c => c.Device.Name == pressedDevice).FirstOrDefault();
+        //    }
+
+        //}
 
     }
 }

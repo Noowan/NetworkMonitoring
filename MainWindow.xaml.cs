@@ -69,12 +69,12 @@ namespace NetworkMonitoring
                 
             }
 
-            if (e.Source.ToString().Contains("Опция 3"))
+            if (e.Source.ToString().Contains("Посмотреть конфигурацию"))
             {
                 gl.DeleteStackPanel(name);
             }
 
-            if (e.Source.ToString().Contains("Опция 4"))
+            if (e.Source.ToString().Contains("Посмотреть графики последних значений"))
             {
                 gl.DeleteStackPanel(name);
             }
