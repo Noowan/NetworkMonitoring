@@ -76,9 +76,11 @@ namespace NetworkMonitoring
                 cw.Show();
             }
 
-            if (e.Source.ToString().Contains("Посмотреть графики последних значений"))
+            if (e.Source.ToString().Contains("Посмотреть графики"))
             {
                 gl.DeleteStackPanel(name);
+                Graph g = new();
+                g.Show();
             }
         }
 

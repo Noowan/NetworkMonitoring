@@ -1,0 +1,29 @@
+﻿<Window x:Class="NetworkMonitoring.Graph"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkMonitoring"
+        mc:Ignorable="d"
+        Title="Graph" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" VerticalAlignment="Top">
+            <ComboBox Name="ComboBox" Margin="0,3,0,3" Width="300" VerticalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged" ></ComboBox>
+            <Label Margin ="10,0,0,0" Content="С:"></Label>
+            <DatePicker Name="DateFrom" Margin="-10,0,0,0" SelectedDateChanged="DateFrom_SelectedDateChanged"></DatePicker>
+            <Label Margin="10,0,0,0" Content="По:"></Label>
+            <DatePicker Name="DateTill" Margin="-10,0,0,0" IsTodayHighlighted="True" SelectedDateChanged="DateTill_SelectedDateChanged"></DatePicker>
+            <Button Margin="50,0,0,0" Content="Показать" PreviewMouseLeftButtonDown="ViewButtonClick"></Button>
+        </Menu>
+        <!--Grid.Row="1" x:Name="datagrid"-->
+        
+    </Grid>
+</Window>

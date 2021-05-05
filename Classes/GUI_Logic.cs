@@ -38,7 +38,7 @@ namespace NetworkMonitoring
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Проверить доступность", Name = "Command1" });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Последние данные", Name = "Command2" });
             sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Посмотреть конфигурацию", Name = "Command3" });
-            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Опция 4", Name = "Command4" });
+            sp.Children.Add(new Button { Width = 200, Height = 30, Content = "Посмотреть графики", Name = "Command4" });
             TranslateTransform transform1 = new TranslateTransform();
             transform1.X = Mouse.GetPosition(Form.grid1).X - 350;
             transform1.Y = Mouse.GetPosition(Form.grid1).Y - 100;
