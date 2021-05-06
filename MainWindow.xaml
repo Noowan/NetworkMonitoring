@@ -76,19 +76,19 @@
 
             <Button Style="{StaticResource Router}" Template="{StaticResource NoMouseOverButtonTemplate}" Grid.Column="0" Grid.Row="1" Name ="R1"  VerticalAlignment="Top" Margin="50" Height="68" Width="84" PreviewMouseLeftButtonDown="RouterClick" BorderThickness="0"></Button>
             <Label Grid.Column="0" Grid.Row="1" Content="PE-1"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
-            <Label Grid.Column="0" Grid.Row="1" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+            <Label x:Name="pos1Status" Grid.Column="0" Grid.Row="1" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
 
             <Button Style="{StaticResource Router}" Template="{StaticResource NoMouseOverButtonTemplate}" Grid.Column="0" Grid.Row="2" Name ="R2"  Margin="50" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseLeftButtonDown="RouterClick" BorderThickness="0"></Button>
             <Label Grid.Column="0" Grid.Row="2" Content="PE-3"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
-            <Label Grid.Column="0" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+            <Label x:Name="pos3Status" Grid.Column="0" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
 
             <Button Style="{StaticResource Router}" Template="{StaticResource NoMouseOverButtonTemplate}" Grid.Column="1" Grid.Row="1" Name ="R3" Margin="50" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseLeftButtonDown="RouterClick" BorderThickness="0"></Button>
             <Label Grid.Column="1" Grid.Row="1" Content="PE-2"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
-            <Label Grid.Column="1" Grid.Row="1" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+            <Label x:Name="pos2Status" Grid.Column="1" Grid.Row="1" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
 
             <Button Style="{StaticResource Router}" Template="{StaticResource NoMouseOverButtonTemplate}" Grid.Column="1" Grid.Row="2" Name ="R4" Margin="50" VerticalAlignment="Top" Height="68" Width="84" PreviewMouseLeftButtonDown="RouterClick" BorderThickness="0"></Button>
             <Label Grid.Column="1" Grid.Row="2" Content="PE-2"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
-            <Label Grid.Column="1" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
+            <Label x:Name="pos4Status" Grid.Column="1" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
 
         </Grid>
         
