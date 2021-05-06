@@ -55,44 +55,45 @@ namespace NetworkMonitoring
 
         private void ViewButtonClick(object sender, MouseButtonEventArgs e)
         {
-            
 
             using (NetworkMonitoringContext db = new NetworkMonitoringContext())
             {
-                var values = db.Values.Where(v => v.DeviceId == deviceId && v.MetricName == comboBoxSelection && v.ValueDate >= dateFrom && v.ValueDate <= dateTill);
+               var values = db.Values.Where(v => v.DeviceId == deviceId && v.MetricName == comboBoxSelection && v.ValueDate >= dateFrom && v.ValueDate <= dateTill);
+
+                //foreach (var v in values)
+                //    if(v.MetricName.Contains("Ethernet"))
+                //    {
+                //        sly.MaxValue = 3;
+                //        sly.MinValue = 1;
+                //    }
                 
-                //YFormatter = value => value.ToString("C");
-                string[] timestamps = new string[values.Count()];
-                int i = 0;
-                foreach (var v in values)
+                LineSeries line1 = new LineSeries();
+                line1.Title = comboBoxSelection;
+                Labels = new List<string>();
+                foreach (var item in values)
                 {
-                    timestamps[i] = v.ValueDate.ToString();
+                    Labels.Add(item.ValueDate.ToString());
+                }
+                int i = 0;
+                int[] temp = new int[values.Count()];
+                foreach(var v in values)
+                {
+                    temp[i] = Convert.ToInt32(v.Value1);
                     i++;
                 }
+                line1.Values = new ChartValues<int>(temp);
+                seriesCollection = new SeriesCollection();
+                seriesCollection.Add(line1);
 
-                //int[] seriesCollection = new int[values.Count()];
-                //i = 0;
-                //foreach (var v in values)
-                //{
-                //    seriesCollection[i] = Convert.ToInt32(v.Value1);
-                //}
-
-                SeriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Title = "Статусы",
-                    Values = new ChartValues<int> { 1, 2, 1, 1 ,1,1,2,2,1,1,1,1,1,1,1,1 }
-                }
-            };
-
-
-
-
-                
                 DataContext = this;
+                this.sl.Series = seriesCollection;
+                slx.Labels = Labels;
+
+            
             }
         }
+
+
 
         public int GetDeviceID()
         {
@@ -120,6 +121,7 @@ namespace NetworkMonitoring
             dateTill = dateTill.AddHours(23).AddMinutes(59).AddSeconds(59);
         }
 
-        public SeriesCollection SeriesCollection { get; set; }
+        public SeriesCollection seriesCollection { get; set; }
+        public List<string> Labels { get; set; }
     }
 }
