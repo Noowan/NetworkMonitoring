@@ -67,6 +67,13 @@ namespace NetworkMonitoring.Classes
             foreach (string a in alertarray)
             {
                 alertmessage = String.Concat(alertmessage, $"{a}");
+                using (NetworkMonitoringContext db = new NetworkMonitoringContext())
+                {
+                    int deviceId = GetDeviceID(deviceName);
+                    Alert alert = new Alert { Deviceid = deviceId, Alertstring = a, Alertdate = DateTime.Now };
+                    db.Alerts.Add(alert);
+                    db.SaveChanges();
+                }
             }
 
             if (alertmessage != null)
