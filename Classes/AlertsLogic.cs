@@ -66,7 +66,7 @@ namespace NetworkMonitoring.Classes
             string alertmessage = null;
             foreach (string a in alertarray)
             {
-                alertmessage = String.Concat(alertmessage, $"{a}");
+                alertmessage = String.Concat(alertmessage, $";{a};");
                 using (NetworkMonitoringContext db = new NetworkMonitoringContext())
                 {
                     int deviceId = GetDeviceID(deviceName);
@@ -102,8 +102,6 @@ namespace NetworkMonitoring.Classes
                                   {
                                       g.Key
                                   };
-                //string[] masMetricNames = new string[metricNames.Count()];
-                //string[] masMetricValues = new string[metricNames.Count()];
 
                 string[,] masMetricValuesAndNames = new string[2, metricNames.Count()];
                 int i = 0;
