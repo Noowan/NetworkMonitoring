@@ -50,7 +50,6 @@ namespace NetworkMonitoring
 
                 entity.Property(e => e.Deviceid).HasColumnName("deviceid");
 
-                entity.Property(e => e.Lastvalue).HasColumnName("lastvalue");
 
                 entity.HasOne(d => d.Device)
                     .WithMany(p => p.Alerts)

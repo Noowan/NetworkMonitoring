@@ -60,11 +60,10 @@
             </Grid.ColumnDefinitions>
 
             <Menu Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
-                <MenuItem Header="File" Margin="2" ></MenuItem>
-                <MenuItem Header="Edit" Margin="2"></MenuItem>
                 <MenuItem Header="Об авторе" Margin="2" PreviewMouseLeftButtonDown="AboutAuthorClick"></MenuItem>
                 <MenuItem Header="О программе" Margin="2" PreviewMouseLeftButtonDown="AboutClick"></MenuItem>
                 <MenuItem Header="Опции" PreviewMouseLeftButtonDown="OpenOptions"></MenuItem>
+                <MenuItem Header="События" PreviewMouseLeftButtonDown="OpenAlerts"></MenuItem>
 
             </Menu>
             <Menu Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">

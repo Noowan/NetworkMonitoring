@@ -125,6 +125,12 @@ namespace NetworkMonitoring
             GUI_Logic gl = new GUI_Logic();
             gl.ShowOptions();
         }
+
+        private void OpenAlerts(object sender, MouseButtonEventArgs e)
+        {
+            AlertsWindow aw = new AlertsWindow();
+            aw.Show();
+        }
     }
 
 
