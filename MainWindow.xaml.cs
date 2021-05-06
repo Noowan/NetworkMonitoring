@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using NetworkMonitoring.Classes;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -37,6 +38,15 @@ namespace NetworkMonitoring
         public MainWindow()
         {
             InitializeComponent();
+            Alerts a1 = new(nameDevice1);
+            a1.EnableAlertCheckTimer();
+            Alerts a2 = new(nameDevice2);
+            a2.EnableAlertCheckTimer();
+            Alerts a3 = new(nameDevice3);
+            a3.EnableAlertCheckTimer();
+            Alerts a4 = new(nameDevice4);
+            a4.EnableAlertCheckTimer();
+
 
         }
 

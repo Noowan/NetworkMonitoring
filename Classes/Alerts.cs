@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace NetworkMonitoring.Classes
 {
@@ -27,7 +28,7 @@ namespace NetworkMonitoring.Classes
             }
         }
 
-        public void CheckIfLastDataChanged()
+        public void CheckIfLastDataChanged(object sender, EventArgs e)
         {
             string[,] lastData = GetMetricNamesAndValues();
             Thread.Sleep(15000);
@@ -73,5 +74,15 @@ namespace NetworkMonitoring.Classes
             }
 
         }
+
+        public void EnableAlertCheckTimer()
+        {
+
+            DispatcherTimer getConfigTimer = new DispatcherTimer();
+            getConfigTimer.Tick += new EventHandler(CheckIfLastDataChanged);
+            getConfigTimer.Interval = new TimeSpan(0, 0, 15);
+            getConfigTimer.Start();
+        }
+
     }
 }
