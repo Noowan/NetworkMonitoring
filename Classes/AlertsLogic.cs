@@ -10,12 +10,12 @@ using System.Windows.Threading;
 
 namespace NetworkMonitoring.Classes
 {
-    class Alerts
+    class AlertsLogic
     {
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
         private string deviceName;
 
-        public Alerts(string _d)
+        public AlertsLogic(string _d)
         {
             this.deviceName = _d;
         }
