@@ -17,6 +17,7 @@ namespace NetworkMonitoring
         {
         }
 
+        public virtual DbSet<Alert> Alerts { get; set; }
         public virtual DbSet<Config> Configs { get; set; }
         public virtual DbSet<Credential> Credentials { get; set; }
         public virtual DbSet<Device> Devices { get; set; }
@@ -34,6 +35,29 @@ namespace NetworkMonitoring
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS");
+
+            modelBuilder.Entity<Alert>(entity =>
+            {
+                entity.Property(e => e.Alertid).HasColumnName("alertid");
+
+                entity.Property(e => e.Alertdate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("alertdate");
+
+                entity.Property(e => e.Alertstring)
+                    .IsRequired()
+                    .HasColumnName("alertstring");
+
+                entity.Property(e => e.Deviceid).HasColumnName("deviceid");
+
+                entity.Property(e => e.Lastvalue).HasColumnName("lastvalue");
+
+                entity.HasOne(d => d.Device)
+                    .WithMany(p => p.Alerts)
+                    .HasForeignKey(d => d.Deviceid)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Alerts_Devices");
+            });
 
             modelBuilder.Entity<Config>(entity =>
             {
@@ -105,6 +129,10 @@ namespace NetworkMonitoring
                 entity.Property(e => e.Value1)
                     .HasColumnName("value")
                     .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.ValueDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("valueDate");
 
                 entity.Property(e => e.ValueStr)
                     .HasColumnName("valueStr")

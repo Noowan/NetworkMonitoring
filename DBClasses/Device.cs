@@ -9,6 +9,7 @@ namespace NetworkMonitoring
     {
         public Device()
         {
+            Alerts = new HashSet<Alert>();
             Configs = new HashSet<Config>();
             Credentials = new HashSet<Credential>();
             Values = new HashSet<Value>();
@@ -21,6 +22,7 @@ namespace NetworkMonitoring
         public string Manufacturer { get; set; }
         public int WindowPosition { get; set; }
 
+        public virtual ICollection<Alert> Alerts { get; set; }
         public virtual ICollection<Config> Configs { get; set; }
         public virtual ICollection<Credential> Credentials { get; set; }
         public virtual ICollection<Value> Values { get; set; }

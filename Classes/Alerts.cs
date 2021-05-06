@@ -36,7 +36,7 @@ namespace NetworkMonitoring.Classes
             if (deviceName == "PE-3") { Form.pos3Status.Content = "OK"; Form.pos3Status.Foreground = Brushes.Green; }
             if (deviceName == "PE-4") { Form.pos4Status.Content = "OK"; Form.pos4Status.Foreground = Brushes.Green; }
             string[,] lastData = GetMetricNamesAndValues();
-            await Task.Delay(15000);
+            await Task.Delay(7000);
             string[,] lastDataPlus15Sec = GetMetricNamesAndValues();
             List<string> alertdata = new List<string>();
 
@@ -66,7 +66,7 @@ namespace NetworkMonitoring.Classes
             string alertmessage = null;
             foreach (string a in alertarray)
             {
-                alertmessage = String.Concat(alertmessage, $"\n{a}");
+                alertmessage = String.Concat(alertmessage, $"{a}");
             }
 
             if (alertmessage != null)
@@ -124,7 +124,7 @@ namespace NetworkMonitoring.Classes
 
             DispatcherTimer getConfigTimer = new DispatcherTimer();
             getConfigTimer.Tick += new EventHandler(CheckIfLastDataChanged);
-            getConfigTimer.Interval = new TimeSpan(0, 0, 10);
+            getConfigTimer.Interval = new TimeSpan(0, 0, 25);
             getConfigTimer.Start();
         }
 
