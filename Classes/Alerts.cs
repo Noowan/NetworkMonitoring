@@ -69,10 +69,14 @@ namespace NetworkMonitoring.Classes
                 alertmessage = String.Concat(alertmessage, $"\n{a}");
             }
 
-            if (deviceName == "PE-1") { Form.pos1Status.Content = alertmessage; Form.pos1Status.Foreground = Brushes.Red; }
-            if (deviceName == "PE-2") { Form.pos2Status.Content = alertmessage; Form.pos2Status.Foreground = Brushes.Red; }
-            if (deviceName == "PE-3") { Form.pos3Status.Content = alertmessage; Form.pos3Status.Foreground = Brushes.Red; }
-            if (deviceName == "PE-4") { Form.pos4Status.Content = alertmessage; Form.pos4Status.Foreground = Brushes.Red; }
+            if (alertmessage != null)
+            {
+                if (deviceName == "PE-1") { Form.pos1Status.Content = alertmessage; Form.pos1Status.Foreground = Brushes.Red; }
+                if (deviceName == "PE-2") { Form.pos2Status.Content = alertmessage; Form.pos2Status.Foreground = Brushes.Red; }
+                if (deviceName == "PE-3") { Form.pos3Status.Content = alertmessage; Form.pos3Status.Foreground = Brushes.Red; }
+                if (deviceName == "PE-4") { Form.pos4Status.Content = alertmessage; Form.pos4Status.Foreground = Brushes.Red; }
+            }
+
         }
 
 
