@@ -51,9 +51,21 @@ namespace NetworkMonitoring.Classes
                             if (Convert.ToInt32(lastDataPlus15Sec[1, i]) > 50)
                             {
                                 alertdata.Add("High temperature");
+                                break;
                             }
                         }
-                        else
+                        if (lastDataPlus15Sec[0, i].Contains("GigabitEthernet0/1"))
+                        {
+                            alertdata.Add($"{lastDataPlus15Sec[0, i]} changed");
+                            //Добавить изменение цвета линии
+                            break;
+                        }
+                        if (lastDataPlus15Sec[0, i].Contains("0/2"))
+                        {
+                            alertdata.Add($"{lastDataPlus15Sec[0, i]} changed");
+                            //Добавить изменение цвета линии
+                            break;
+                        }
                         {
                             alertdata.Add($"{lastDataPlus15Sec[0, i]} changed");
                         }

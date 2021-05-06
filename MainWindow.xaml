@@ -88,8 +88,27 @@
             <Label Grid.Column="1" Grid.Row="2" Content="PE-2"  Width="60" Margin="20"  Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" />
             <Label x:Name="pos4Status" Grid.Column="1" Grid.Row="2" Content="Status"  Width="300" Margin="30"  Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" />
 
+            <Line Grid.Row="1" Grid.ColumnSpan="2" Stroke="Green" X1="250" X2="583" Y1="81" Y2="81"></Line>
+            <Line Grid.Row="2" Grid.ColumnSpan="2" Stroke="Green" X1="250" X2="583" Y1="81" Y2="81"></Line>
+
+            <Line Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Stroke="Green" X1="250" X2="585" Y1="90" Y2="260"></Line>
+            <Line Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Stroke="Green" X1="585" X2="245" Y1="90" Y2="260"></Line>
+
+
+            <Label Content="Gi0/1" Grid.Row="1" Grid.Column="0" Height="30" Width="50" HorizontalAlignment="Left" Margin="250,50,0,109"></Label>
+            <Label Content="Fa0/2" Grid.Row="1" Grid.Column="0" Height="30" Width="50" HorizontalAlignment="Left" Margin="238,94,0,65"></Label>
+
+            <Label Content="Gi0/1" Grid.Row="1" Grid.Column="1" Height="30" Width="50" HorizontalAlignment="Left" Margin="122,50,0,109"></Label>
+            <Label Content="Fa0/2" Grid.Row="1" Grid.Column="1" Height="30" Width="50" HorizontalAlignment="Left" Margin="122,103,0,56"></Label>
+
+            <Label Content="Gi0/1" Grid.Row="2" Grid.Column="0" Height="30" Width="50" HorizontalAlignment="Left" Margin="250,77,0,82"></Label>
+            <Label Content="Fa0/2" Grid.Row="2" Grid.Column="0" Height="30" Width="50" HorizontalAlignment="Left" Margin="238,32,0,127"></Label>
+
+            <Label Content="Gi0/1" Grid.Row="2" Grid.Column="1" Height="30" Width="50" HorizontalAlignment="Left" Margin="116,77,0,82"></Label>
+            <Label Content="Fa0/2" Grid.Row="2" Grid.Column="1" Height="30" Width="50" HorizontalAlignment="Left" Margin="122,32,0,127"></Label>
+
         </Grid>
-        
+
     </Grid>
 
 </Window>
