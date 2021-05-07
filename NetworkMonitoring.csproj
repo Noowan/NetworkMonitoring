@@ -9,6 +9,8 @@
   <ItemGroup>
     <None Remove="Bitmap1.bmp" />
     <None Remove="Bitmap2.bmp" />
+    <None Remove="Icons\Routerfocus.png" />
+    <None Remove="Icons\RouterNoFocus.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +29,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\Bitmap2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Routerfocus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Routernofocus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

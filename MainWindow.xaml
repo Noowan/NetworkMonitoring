@@ -14,7 +14,7 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush 
-                        ImageSource="pack://application:,,,/Icons/Bitmap1.bmp">
+                        ImageSource="pack://application:,,,/Icons/Routernofocus.png">
                     </ImageBrush>
                 </Setter.Value>
             </Setter>
@@ -33,7 +33,7 @@
                     <Setter Property="Background">
                         <Setter.Value>
                             <ImageBrush
-                                ImageSource="pack://application:,,,/Icons/Bitmap2.bmp">
+                                ImageSource="pack://application:,,,/Icons/Routerfocus.png">
                             </ImageBrush>
                         </Setter.Value>
                     </Setter>
@@ -60,7 +60,7 @@
             </Grid.ColumnDefinitions>
 
             <Menu Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
-                <MenuItem Header="События" PreviewMouseLeftButtonDown="OpenAlerts"></MenuItem>
+                <MenuItem Header="События" PreviewMouseLeftButtonDown="OpenAlerts" Margin="10,0,0,0"></MenuItem>
                 <MenuItem Header="Опции" PreviewMouseLeftButtonDown="OpenOptions"></MenuItem>
                 <MenuItem Header="Об авторе" Margin="2" PreviewMouseLeftButtonDown="AboutAuthorClick"></MenuItem>
                 <MenuItem Header="О программе" Margin="2" PreviewMouseLeftButtonDown="AboutClick"></MenuItem>
