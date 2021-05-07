@@ -25,12 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\Bitmap1.bmp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\Bitmap2.bmp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Icons\Routerfocus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
