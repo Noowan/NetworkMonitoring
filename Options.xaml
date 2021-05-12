@@ -73,12 +73,12 @@
 
         <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  Content="Общие настройки" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" VerticalContentAlignment="Top" Margin="-8"></Label>
         <CheckBox Content="Включить опрос SNMP" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,15,0,0" Height="25" Width="170" VerticalAlignment="Top" HorizontalAlignment="Left" Checked="SNMPStart"></CheckBox>
-        <CheckBox Content="Режим добавления устройства" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,35,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Демо-режим" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,55,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        
-        <CheckBox Content="Зарезервировано" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Зарезервировано" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Зарезервировано" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Режим добавления устройства" IsEnabled="False" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,35,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Демо-режим" IsEnabled="False" Foreground="Gray" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,55,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+
+        <CheckBox Content="Зарезервировано" IsEnabled="False" Foreground="Gray" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Зарезервировано" IsEnabled="False" Foreground="Gray" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Зарезервировано" IsEnabled="False" Foreground="Gray" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
        
 
     </Grid>
