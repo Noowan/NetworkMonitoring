@@ -72,21 +72,14 @@
         <Button Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Height="20" Width="60" Content="Сохранить" FontSize="10" HorizontalAlignment="Right" Margin="30" PreviewMouseLeftButtonDown="Pos4Button_Click"></Button>
 
         <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  Content="Общие настройки" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" VerticalContentAlignment="Top" Margin="-8"></Label>
-        <CheckBox Content="Enable SNMP" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Checked="SNMPStart"></CheckBox>
-        <CheckBox Content="Checkbox22222222222" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox33333333333" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Включить опрос SNMP" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,15,0,0" Height="25" Width="170" VerticalAlignment="Top" HorizontalAlignment="Left" Checked="SNMPStart"></CheckBox>
+        <CheckBox Content="Режим добавления устройства" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,35,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Демо-режим" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,55,0,0" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
         
-        <CheckBox Content="Checkbox44444444444" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="200,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox55555555555" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="200,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox66666666666" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="200,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        
-        <CheckBox Content="Checkbox77777777777" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="410,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox88888888888" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="410,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox99999999999" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="410,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        
-        <CheckBox Content="Checkbox10101010101" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="610,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox11111111111" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="610,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
-        <CheckBox Content="Checkbox12121212121" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="610,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Зарезервировано" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,15,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Зарезервировано" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,35,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+        <CheckBox Content="Зарезервировано" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="250,55,0,0" Height="25" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></CheckBox>
+       
 
     </Grid>
 </Window>
