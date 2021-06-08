@@ -75,3 +75,8 @@ if (e.Source.ToString().Contains("Опция 1"))
 
         ---Генерация базы в коде----
         Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=NetworkMonitoring;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -f
+
+        ---После переноса базы----
+        ALTER AUTHORIZATION 
+ON DATABASE::[DatabaseName]
+TO [A Suitable Login];
