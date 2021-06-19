@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetworkMonitoring"
         mc:Ignorable="d"
-        Title="AboutWindow" Height="263" Width="403">
+        Title="Об авторе" Height="263" Width="403">
     <Grid>
         <Button Content="Закрыть" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="30" Width="138" PreviewMouseLeftButtonDown="Button_Close"/>
         <Label Content="Автоматизированное рабочее место оператора связи" HorizontalContentAlignment="Center" Margin="5,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="363"/>
